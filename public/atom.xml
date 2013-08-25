@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://yoursite.com/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2013-08-25T14:39:27-04:00</updated>
-  <id>http://yoursite.com/</id>
+  <title><![CDATA[Dan Ubilla]]></title>
+  <link href="http://danubilla.com/atom.xml" rel="self"/>
+  <link href="http://danubilla.com/"/>
+  <updated>2013-08-25T18:31:10-04:00</updated>
+  <id>http://danubilla.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
-    
+    <name><![CDATA[Dan Ubilla]]></name>
+    <email><![CDATA[dan.ubilla@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[Yeoman, Backbone, and a Smarter Client]]></title>
-    <link href="http://yoursite.com/blog/web-development/yeoman-backbone-and-a-smarter-client.html"/>
+    <link href="http://danubilla.com/blog/web-development/yeoman-backbone-and-a-smarter-client.html"/>
     <updated>2013-08-24T09:29:00-04:00</updated>
-    <id>http://yoursite.com/blog/web-development/yeoman-backbone-and-a-smarter-client</id>
+    <id>http://danubilla.com/blog/web-development/yeoman-backbone-and-a-smarter-client</id>
     <content type="html"><![CDATA[<p>I have gone through a number of tutorials on newer front-end tools like AngularJS, Grunt, and Backbone. Nothing compares to building something of your own, though. After dipping my toe into the water numerous times before, I dove into the deep end and started combining these tools on my own.</p>
 
 <!-- more -->
@@ -33,9 +33,9 @@
   
   <entry>
     <title type="html"><![CDATA[Git Submodules]]></title>
-    <link href="http://yoursite.com/blog/web-development/git-submodules.html"/>
+    <link href="http://danubilla.com/blog/web-development/git-submodules.html"/>
     <updated>2013-07-30T23:50:00-04:00</updated>
-    <id>http://yoursite.com/blog/web-development/git-submodules</id>
+    <id>http://danubilla.com/blog/web-development/git-submodules</id>
     <content type="html"><![CDATA[<p>I normally feel fairly well-versed in Git, which is to say, I can commit code, I can see what&rsquo;s happening, and I generally know enough to not screw anything up. I thought my Git Fu was tight enough that I at least had a good grasp on all that could be done with the version control system until I came across a project that used submodules. In Git, a submodule is a connection from one repository to another. Say, for instance, you&rsquo;re working on a suite of similar products. You want each one to have its own repository. That makes plenty of sense. But suppose each of these products shared a common messaging platform. Instead of maintaining this same code across the suite of products, which would defeat a lot of the purpose of setting up a VCS, you can give it its own subrepo, and have each product in your suite set up a submodule to reference that repo. All seems well and good, but there are a few gotchas to keep in mind.</p>
 
 <!-- more -->

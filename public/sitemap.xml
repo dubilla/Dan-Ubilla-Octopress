@@ -1,29 +1,29 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://yoursite.com/blog/web-development/git-submodules.html</loc>
+        <loc>http://danubilla.com/blog/web-development/git-submodules.html</loc>
         <lastmod>2013-08-25T13:58:27-04:00</lastmod>
     </url>
     <url>
         <loc>
-            http://yoursite.com/blog/web-development/yeoman-backbone-and-a-smarter-client.html
+            http://danubilla.com/blog/web-development/yeoman-backbone-and-a-smarter-client.html
         </loc>
         <lastmod>2013-08-25T13:47:35-04:00</lastmod>
     </url>
     <url>
-        <loc>http://yoursite.com/blog/archives/</loc>
+        <loc>http://danubilla.com/blog/archives/</loc>
         <lastmod>2013-08-25T13:58:27-04:00</lastmod>
     </url>
     <url>
-        <loc>http://yoursite.com/</loc>
+        <loc>http://danubilla.com/</loc>
         <lastmod>2013-08-25T13:58:27-04:00</lastmod>
     </url>
     <url>
-        <loc>http://yoursite.com/portfolio.html</loc>
+        <loc>http://danubilla.com/portfolio.html</loc>
         <lastmod>2013-08-25T13:53:08-04:00</lastmod>
     </url>
     <url>
-        <loc>http://yoursite.com/robots.txt</loc>
+        <loc>http://danubilla.com/robots.txt</loc>
         <lastmod>2013-08-25T12:07:35-04:00</lastmod>
     </url>
 </urlset>
