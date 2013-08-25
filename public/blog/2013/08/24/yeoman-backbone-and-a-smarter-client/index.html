@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Yeoman, Backbone, and a Smarter Client - My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="I have gone through a number of tutorials on newer front-end tools like AngularJS, Grunt, and Backbone. Nothing compares to building something of &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://yoursite.com/blog/2013/08/24/yeoman-backbone-and-a-smarter-client">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Octopress Blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:yoursite.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Yeoman, Backbone, and a Smarter Client</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-24T09:29:00-04:00" pubdate data-updated="true">Aug 24<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I have gone through a number of tutorials on newer front-end tools like AngularJS, Grunt, and Backbone. Nothing compares to building something of your own, though. After dipping my toe into the water numerous times before, I dove into the deep end and started combining these tools on my own.</p>
+
+<!-- more -->
+
+
+<p>I started with <a href="http://yeoman.io">Yeoman</a>, as one does. It&rsquo;s a tool to bootstrap your web app. With a few keystrokes on the command line, you have all the files you need to run a web application. Out of the box you get some good tools: the <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a>, <a href="http://jquery.com/">jQuery</a>, and <a href="http://modernizr.com/">Modernizr</a>. You&rsquo;re immediately given the option to add <a href="http://requirejs.org/">RequireJS</a> for handling JavaScript loading dependencies on top of a few other options to get your web app bootstrapped even further. Yeoman starts to get super fancy, however, with its generators. Generators are bundles that allow you to bootstrap on top of the default Yeoman options. If you&rsquo;re building an AngularJS, Backbone or Ember app, download a generator for your project before you start Yeoman up for your latest project.</p>
+
+<p>With Yeoman in play, I decided to go with Backbone, and running Yeoman with <a href="https://github.com/yeoman/generator-backbone">the Backbone generator</a> left me with the perfect shell of a Backbone app to get started. Backbone is an MV<em> framework designed to separate application logic from view logic. (Note the * instead of a C. There are no controllers in Backbone. Instead, much of the logic that ties up the model and the view is actually done in the view JS.) I chose Backbone over other frameworks for a couple of reasons. I really enjoy the way Backbone handles the View. I&rsquo;m able to bind my model and view, and thus, keep my HTML completely separated from whatever framework I&rsquo;m using at the time. I also enjoy the plug-and-play nature of Backbone. I get MV</em> out of the box for very little code weight. If I want to add dependency injection and AMD through RequireJS, I can run that variety of the framework. Backbone gives you options. Thirdly, I really just came across more articles and tutorials that I enjoyed from the Backbone community. When it comes down to it, the community might be the most important reason for choosing a new technology. Regardless of the framework you prefer, choose one, and get coding on the front-end, smarter and faster.</p>
+
+<p>I&rsquo;ll save my experience with Grunt for another post. The past month of diving into these front-end technologies has been incredibly eye-opening. Client-side code tools have evolved immensely in the past couple of years, and the community creating and maintaining these tools is truly inspiring. Spinning up a web app can be daunting. Creating structure for your code can leave you paralyzed before you&rsquo;ve even begun your own project. Yeoman and Backbone are two tools I&rsquo;m ready to go to war with for every new static-site project I begin.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-24T09:29:00-04:00" pubdate data-updated="true">Aug 24<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/web-development/'>web-development</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://yoursite.com/blog/2013/08/24/yeoman-backbone-and-a-smarter-client/" data-via="" data-counturl="http://yoursite.com/blog/2013/08/24/yeoman-backbone-and-a-smarter-client/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/07/30/git-submodules/" title="Previous Post: Git Submodules">&laquo; Git Submodules</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/08/25/pushing-your-octopress-blog-to-github/" title="Next Post: Pushing Your Octopress Blog to Github">Pushing Your Octopress Blog to Github &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/25/pushing-your-octopress-blog-to-github/">Pushing Your Octopress Blog to Github</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/24/yeoman-backbone-and-a-smarter-client/">Yeoman, Backbone, and a Smarter Client</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/30/git-submodules/">Git Submodules</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Your Name -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
