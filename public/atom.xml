@@ -4,7 +4,7 @@
   <title><![CDATA[Dan Ubilla]]></title>
   <link href="http://danubilla.com/atom.xml" rel="self"/>
   <link href="http://danubilla.com/"/>
-  <updated>2013-08-29T00:46:24-04:00</updated>
+  <updated>2013-09-04T23:34:40-04:00</updated>
   <id>http://danubilla.com/</id>
   <author>
     <name><![CDATA[Dan Ubilla]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Introducing MaxWell]]></title>
+    <link href="http://danubilla.com/blog/introducing-maxwell.html"/>
+    <updated>2013-08-29T00:07:00-04:00</updated>
+    <id>http://danubilla.com/blog/introducing-maxwell</id>
+    <content type="html"><![CDATA[<p>In my last post, Yeoman, Backbone, and a Smarter Client, I discussed diving into the new development-minded technologies that have flooded the JS proverbial toolbox. The first project I put together with said tools is <a href="http://dubilla.github.io/Maxwell/">MaxWell</a>, a single-page web app for graphing your point totals in ESPN&rsquo;s Fantasy MaxPart games (think Pigskin Pick&#8217;em and ESPN&rsquo;s march madness game, Tournament Challenge). <a href="http://yeoman.io/">Yeoman</a> and <a href="https://github.com/yeoman/generator-backbone">the Yeoman Backbone generator</a> were used to bootstrap the application. <a href="http://requirejs.org/">RequireJS</a> is used to manage dependencies. The application itself lives inside a <a href="http://backbonejs.org/">Backbone</a> framework. <a href="http://gruntjs.com/">Grunt</a> is used to build the webapp and prepare it for deployment. Finally, the app is deployed using git and it lives on <a href="http://pages.github.com/">GitHub pages</a>.</p>
+
+<p>All in all, I could not be more pleased with the single-page web app tools I&rsquo;ve discovered and workflow I&rsquo;ve cultivated. Now that I have the workflow in place, I&rsquo;m already looking to the next side project, FoursightSquare, to see just how quickly I can spin up a web app, start iterating on it, and deploy quickly with each iteration. You can follow along in the meanwhile on its Github page.</p>
+
+<p>It&rsquo;s important to note that MaxWell is a proof of concept with hard-coded values. Given an API, this web app could exist in its current form, or, in an API&rsquo;s absence, this app could be pushed to ESPN&rsquo;s servers and hooked up with just a little bit of server-side code.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Yeoman, Backbone, and a Smarter Client]]></title>
@@ -501,28 +514,6 @@ I&rsquo;ll admit it.  I&rsquo;m a Kanye West apologist, but let&rsquo;s look at
 
 <p><strong>01.  The Gaslight Anthem &ndash; The &lsquo;59 Sound</strong>
 Mad, frantic, and desperate, The Gaslight Anthem&rsquo;s <u>The &#8216;59 Sound</u> is the new pop-punk.  If you grew up listening to Blink 182 and New Found Glory, this is your graduation.  Reeking of reflection and waning innocence, this album was surely written after many nights of emptying bottles on front porches with old friends.  Despite the demure this description might imply, the whole album makes you want to run downtown soaking up every last bit of life possible before last call sends you on your next adventure.  The guitar tones ring, the drums pound, and the punk ethos stays true.  Pick up this album and feel alive.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Great Experiment]]></title>
-    <link href="http://danubilla.com/blog/ramblings/the-great-experiment.html"/>
-    <updated>2009-03-02T00:07:00-05:00</updated>
-    <id>http://danubilla.com/blog/ramblings/the-great-experiment</id>
-    <content type="html"><![CDATA[<p>Tomorrow is the first day of the work month which normally means two big purchases: my Commuter Rail pass and my T/Bus pass.  For the first time since I&rsquo;ve come to this fair city, the $59 T pass is getting left out.</p>
-
-<!-- more -->
-
-
-<p>A two-way T trip runs $2.50, so I would have to ride the T 24 times to be in the red, or black, or in the loss column on this endeavor.  That means a trip a day, which is normally the case, except now I walk the 12 minutes to the Porter Station instead of the 5 minutes to the Davis stop.  Amazingly, this gives me two extra minutes in the morning before I have to leave the door since I don&rsquo;t have to catch the T at Davis, I&rsquo;m just jumping on the commuter train at Porter.  And, if I do happen to leave a little late, I can still make it to the Porter station on time if I run a block for every minute that I&rsquo;m late (math on that exact ratio is still in testing).</p>
-
-<p>Regardless, I&rsquo;m generally happy running the extra block or two so long as I&rsquo;m able to cue up a BS Report before I walk out the door.</p>
-
-<p>Back to the experiment, I think I can cut my T trips down to 16 a month without breaking a sweat, which means a cool $20 in my pocket every month.  Chances are I&rsquo;ll try and save this, but let&rsquo;s take a look at what $20 can go to:</p>
-
-<p>$20 = 1.5 meals out with friends = 1 rack of Busch Light</p>
-
-<p>Exciting!</p>
 ]]></content>
   </entry>
   

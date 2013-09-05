@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>HTML5 and Media Queries - Dan Ubilla</title>
+  <title>Introducing MaxWell - Dan Ubilla</title>
   <meta name="author" content="Dan Ubilla">
 
   
-  <meta name="description" content="I finally took it upon myself to tackle HTML5, and you are looking at the results.  Of course, implementing any form of HTML5 isn&rsquo;t necessarily &hellip;">
+  <meta name="description" content="In my last post, Yeoman, Backbone, and a Smarter Client, I discussed diving into the new development-minded technologies that have flooded the JS &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://danubilla.com/blog/web-development/html5-and-media-queries.html">
+  <link rel="canonical" href="http://danubilla.com/blog/introducing-maxwell.html">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Dan Ubilla" type="application/atom+xml">
@@ -83,7 +83,7 @@
   
   <header>
     
-      <h1 class="entry-title">HTML5 and Media Queries</h1>
+      <h1 class="entry-title">Introducing MaxWell</h1>
     
     
       <p class="meta">
@@ -99,28 +99,18 @@
   
 
 
-<time datetime="2011-07-29T22:50:00-04:00" pubdate data-updated="true">Jul 29<span>th</span>, 2011</time>
+<time datetime="2013-08-29T00:07:00-04:00" pubdate data-updated="true">Aug 29<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>I finally took it upon myself to tackle HTML5, and you are looking at the results.  Of course, implementing any form of HTML5 isn&rsquo;t necessarily rewriting all of your markup with fancy new &lt;section&gt; and &lt;nav&gt; tags nor does it have to be adding HTML5 native Javascript.  The first step is the simplest, but it&rsquo;s a first step nonetheless.  I started by simply replacing my doctype with &lt;! DOCTYPE HTML5&gt;.  Gorgeous in its simplicity, no?  This change alone will give you HTML5  features in all modern browsers<sup>1</sup>.</p>
+<div class="entry-content"><p>In my last post, Yeoman, Backbone, and a Smarter Client, I discussed diving into the new development-minded technologies that have flooded the JS proverbial toolbox. The first project I put together with said tools is <a href="http://dubilla.github.io/Maxwell/">MaxWell</a>, a single-page web app for graphing your point totals in ESPN&rsquo;s Fantasy MaxPart games (think Pigskin Pick&#8217;em and ESPN&rsquo;s march madness game, Tournament Challenge). <a href="http://yeoman.io/">Yeoman</a> and <a href="https://github.com/yeoman/generator-backbone">the Yeoman Backbone generator</a> were used to bootstrap the application. <a href="http://requirejs.org/">RequireJS</a> is used to manage dependencies. The application itself lives inside a <a href="http://backbonejs.org/">Backbone</a> framework. <a href="http://gruntjs.com/">Grunt</a> is used to build the webapp and prepare it for deployment. Finally, the app is deployed using git and it lives on <a href="http://pages.github.com/">GitHub pages</a>.</p>
 
-<!-- more -->
+<p>All in all, I could not be more pleased with the single-page web app tools I&rsquo;ve discovered and workflow I&rsquo;ve cultivated. Now that I have the workflow in place, I&rsquo;m already looking to the next side project, FoursightSquare, to see just how quickly I can spin up a web app, start iterating on it, and deploy quickly with each iteration. You can follow along in the meanwhile on its Github page.</p>
 
-
-<p>The first step was so easy, I decided to take some more.  I ripped out the header and footer of my Wordpress template and filled it in with some of <a title="Paul Irish" href="http://paulirish.com/" target="_blank">Paul Irish</a>&rsquo;s <a title="HTML5 Boilerplate" href="http://html5boilerplate.com/" target="_blank">HTML5 Boilerplate</a>.  After, fighting off the fright and intimidation, I was able to follow along with the comments and decide what was needed from the boilerplate, what I wanted, and what I could toss away.  There&rsquo;s a corresponding CSS file with fantastic default styles and even some placeholders for media queries.  Which, in fact, is where I tidied up my work.  Check out this site on webkit-enabled mobile device (iPhone, Android, etc), and you should see a nice, readable mobile layout.  It&rsquo;s by no means perfect, but I would consider the site mobile-enhanced.</p>
-
-<div class="references">
-<h5>References</h5>
-<ol>
-    <li>John Resig, HTML5 DOCTYPE, <a title="http://ejohn.org/blog/html5-doctype/" href="http://ejohn.org/blog/html5-doctype/" target="_blank">http://ejohn.org/blog/html5-doctype/</a>
-</li>
-</ol>
-</div>
-
+<p>It&rsquo;s important to note that MaxWell is a proof of concept with hard-coded values. Given an API, this web app could exist in its current form, or, in an API&rsquo;s absence, this app could be pushed to ESPN&rsquo;s servers and hooked up with just a little bit of server-side code.</p>
 </div>
 
 
@@ -143,21 +133,15 @@
   
 
 
-<time datetime="2011-07-29T22:50:00-04:00" pubdate data-updated="true">Jul 29<span>th</span>, 2011</time>
+<time datetime="2013-08-29T00:07:00-04:00" pubdate data-updated="true">Aug 29<span>th</span>, 2013</time>
       
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/web-development/'>web-development</a>
-  
-</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://danubilla.com/blog/web-development/html5-and-media-queries.html" data-via="dubilla" data-counturl="http://danubilla.com/blog/web-development/html5-and-media-queries.html" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://danubilla.com/blog/introducing-maxwell.html" data-via="dubilla" data-counturl="http://danubilla.com/blog/introducing-maxwell.html" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -170,10 +154,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/design/davis-square-flag.html" title="Previous Post: Davis Square Flag">&laquo; Davis Square Flag</a>
+        <a class="basic-alignment left" href="/blog/web-development/yeoman-backbone-and-a-smarter-client.html" title="Previous Post: Yeoman, Backbone, and a Smarter Client">&laquo; Yeoman, Backbone, and a Smarter Client</a>
       
-      
-        <a class="basic-alignment right" href="/blog/web-development/jquery-selectors-with-valueless-attributes.html" title="Next Post: jQuery Selectors with Valueless Attributes">jQuery Selectors with Valueless Attributes &raquo;</a>
       
     </p>
   </footer>
@@ -282,8 +264,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://danubilla.com/blog/web-development/html5-and-media-queries.html';
-        var disqus_url = 'http://danubilla.com/blog/web-development/html5-and-media-queries.html';
+        var disqus_identifier = 'http://danubilla.com/blog/introducing-maxwell.html';
+        var disqus_url = 'http://danubilla.com/blog/introducing-maxwell.html';
         var disqus_script = 'embed.js';
       
     (function () {
