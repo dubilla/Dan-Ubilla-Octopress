@@ -4,7 +4,7 @@
   <title><![CDATA[Dan Ubilla]]></title>
   <link href="http://danubilla.com/atom.xml" rel="self"/>
   <link href="http://danubilla.com/"/>
-  <updated>2013-09-04T23:34:40-04:00</updated>
+  <updated>2013-09-04T23:48:50-04:00</updated>
   <id>http://danubilla.com/</id>
   <author>
     <name><![CDATA[Dan Ubilla]]></name>
@@ -15,10 +15,13 @@
   
   <entry>
     <title type="html"><![CDATA[Introducing MaxWell]]></title>
-    <link href="http://danubilla.com/blog/introducing-maxwell.html"/>
-    <updated>2013-08-29T00:07:00-04:00</updated>
-    <id>http://danubilla.com/blog/introducing-maxwell</id>
+    <link href="http://danubilla.com/blog/web-development/introducing-maxwell.html"/>
+    <updated>2013-09-04T11:48:00-04:00</updated>
+    <id>http://danubilla.com/blog/web-development/introducing-maxwell</id>
     <content type="html"><![CDATA[<p>In my last post, Yeoman, Backbone, and a Smarter Client, I discussed diving into the new development-minded technologies that have flooded the JS proverbial toolbox. The first project I put together with said tools is <a href="http://dubilla.github.io/Maxwell/">MaxWell</a>, a single-page web app for graphing your point totals in ESPN&rsquo;s Fantasy MaxPart games (think Pigskin Pick&#8217;em and ESPN&rsquo;s march madness game, Tournament Challenge). <a href="http://yeoman.io/">Yeoman</a> and <a href="https://github.com/yeoman/generator-backbone">the Yeoman Backbone generator</a> were used to bootstrap the application. <a href="http://requirejs.org/">RequireJS</a> is used to manage dependencies. The application itself lives inside a <a href="http://backbonejs.org/">Backbone</a> framework. <a href="http://gruntjs.com/">Grunt</a> is used to build the webapp and prepare it for deployment. Finally, the app is deployed using git and it lives on <a href="http://pages.github.com/">GitHub pages</a>.</p>
+
+<!-- more -->
+
 
 <p>All in all, I could not be more pleased with the single-page web app tools I&rsquo;ve discovered and workflow I&rsquo;ve cultivated. Now that I have the workflow in place, I&rsquo;m already looking to the next side project, FoursightSquare, to see just how quickly I can spin up a web app, start iterating on it, and deploy quickly with each iteration. You can follow along in the meanwhile on its Github page.</p>
 
