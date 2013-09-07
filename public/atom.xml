@@ -4,7 +4,7 @@
   <title><![CDATA[Dan Ubilla]]></title>
   <link href="http://danubilla.com/atom.xml" rel="self"/>
   <link href="http://danubilla.com/"/>
-  <updated>2013-09-04T23:48:50-04:00</updated>
+  <updated>2013-09-07T13:55:54-04:00</updated>
   <id>http://danubilla.com/</id>
   <author>
     <name><![CDATA[Dan Ubilla]]></name>
@@ -26,6 +26,27 @@
 <p>All in all, I could not be more pleased with the single-page web app tools I&rsquo;ve discovered and workflow I&rsquo;ve cultivated. Now that I have the workflow in place, I&rsquo;m already looking to the next side project, FoursightSquare, to see just how quickly I can spin up a web app, start iterating on it, and deploy quickly with each iteration. You can follow along in the meanwhile on its Github page.</p>
 
 <p>It&rsquo;s important to note that MaxWell is a proof of concept with hard-coded values. Given an API, this web app could exist in its current form, or, in an API&rsquo;s absence, this app could be pushed to ESPN&rsquo;s servers and hooked up with just a little bit of server-side code.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Pushing Your Octopress Blog to Github]]></title>
+    <link href="http://danubilla.com/blog/web-development/pushing-your-octopress-blog-to-github.html"/>
+    <updated>2013-08-25T14:12:00-04:00</updated>
+    <id>http://danubilla.com/blog/web-development/pushing-your-octopress-blog-to-github</id>
+    <content type="html"><![CDATA[<p>I have just gotten started using the Octopress framework for blogging, and I love it. The setup process is unbelievably well-documented, and if you&rsquo;re familiar with Git and Ruby projects, you&rsquo;ll pick it up fairly quickly. The only issue I had early on was pushing my new blog up to Github for version control. It&rsquo;s a little tricky since the first step is cloning from Brandon Mathis&#8217; Octopress repo, but the fix is relatively simple.</p>
+
+<!-- more -->
+
+
+<p>Once you&rsquo;ve clone the Octopress project, thrown up a few posts, and tidied up any configuration you want, you&rsquo;re going to want to get the repo into version control using Git. If you&rsquo;re like me, you&rsquo;re also going to want to push it up to Github. I was surprised upon first trying to do this, that my repo was already set up with a remote named origin. Of course, it was; I had cloned from the Octopress repo. I went ahead and pulled a quick switcheroo before add the remote Github origin.</p>
+
+<blockquote><p>git rename remote clone
+git add remote origin [github url]</p></blockquote>
+
+<p>It feels a little hacky, but it got the trick done.</p>
+
+<p>Pretty fitting that I&rsquo;m writing about using Octopress as my first post written on the service, huh?</p>
 ]]></content>
   </entry>
   
@@ -475,48 +496,6 @@ Yeah, I was pretty angst-y and heartbroken when I wrote all of those songs. And 
 <p>The allegorical, long-term pressures merely aim to set up the immediate variety: going to college, getting a job, getting married.  All of these, depending on socioeconomical factors, set up more potential for tighter commonalities across a peer group.</p>
 
 <p>It&rsquo;s interesting to note how this, perhaps, instinct to create multitudes of experiences comes together.  A few final questions: common experiences create a familiarity and build a relationship, so is this instinct an animalistic, long-held one to give our packs numbers for survival, or is it a more human desire for a greater sense of intimacy?  What would following the inverse of positive, short-term and negative, long-term pressure grant someone?  The converse?</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Top Ten Albums of 2008]]></title>
-    <link href="http://danubilla.com/blog/music/top-ten-albums-of-2008.html"/>
-    <updated>2009-04-18T19:53:00-04:00</updated>
-    <id>http://danubilla.com/blog/music/top-ten-albums-of-2008</id>
-    <content type="html"><![CDATA[<p>Since the IRS gives us a solid three and a half months to get our financial papers in order, the same amount of time should be granted for a matter much more important: my top ten albums of last year.  As always, each of these albums was originally released in the calendar year.</p>
-
-<!-- more -->
-
-
-<p><strong>10.  City and Colour -Bring Me Your Love</strong>
-A whiskey-soaked voice over a minimalist acoustic backdrop has been done before, but Dallas Green&rsquo;s melodies bound and float easily on his second album.  The dynamics of acoustic guitar  really invoke a larger meaning than most coffeehouse emulators can hope for.  Of course the whiskey in the voice matches the solitary motifs in the lyrics.  Here&rsquo;s the soundtrack to your winter, snowy walk.</p>
-
-<p><strong>09.  Tokyo Police Club &ndash; Elephant Shell</strong>
-<u>Elephant Shell</u> is confidence creeping up your body.  It is light starting at your knees and energy slowly shooting to your shoulders.  Sparse instrumentation doesn&rsquo;t usually excite, but the drums pick up where melodies leave off and do more than just merely handle the load.  The words behind it all ring catchy with more than enough interwoven subjects between songs to allow for mighty leaps in interpretation.  The strength is in the subtlety.</p>
-
-<p><strong>08.  Jack&rsquo;s Mannequin &ndash; The Glass Passenger</strong>
-If Jack&rsquo;s first album <u>Everything in Transit</u> is the summer, then <u>The Glass Passenger</u> is the fall.  If <u>Everything in Transit</u> is blind hope, then <u>The Glass Passenger</u> is optimism laced with nostalgia.  <u>The Glass Passenger</u> runs flush with maturity.  It is a grandiose statement to perseverance through pop.  The power of McMahon&rsquo;s piano is aided through excellent dynamism in the production.  Check out &ldquo;Swim&rdquo; and &ldquo;Hammers and Strings&rdquo; for a sample of the spectrum running through the other eleven tracks.</p>
-
-<p><strong>07.  T.I. &ndash; Paper Trail</strong>
-All the talk in the rap world was focused on one man, whose album can be found on countless 2008 Top Ten Lists.  This is not that man, and this is not that album.  While T.I. may have his own legal troubles, <u>Paper Trail</u> was the class act of the rap game last year.  With themes of redemption, innocence and guilt, and atonement, T.I. can shed his reputation of a rapper meant for the club and officially claim the title of a rap artist.  It&rsquo;s not that T.I. didn&rsquo;t sprinkle in his usual radio fodder, but even those tracks are polished smoother and a couple even have a deeper meaning than Clifford J. Harris has used before.  The production is standard, and yet it works.  It shines just enough while giving T.I. ample room to spit his message.  I can&rsquo;t believe it, but here&rsquo;s T.I. on this year&rsquo;s Top 10.</p>
-
-<p><strong>06.  The Hold Steady &ndash; Stay Positive</strong>
-The troubadours of allusionary heartache maintain a steady groove with their latest effort, <u>Stay Postive</u>.  Calling the album a sequel to their 2005 record, <u>Boys and Girls in America</u> is much more of a compliment than it might sound.  By throwing in pieces of lyrics from old songs, their new work really does come across as the next stage in an almgamation of unnamed characters the boys have created throughout the years, which gives their base work a much greater sense of cohesion.  The songs pop, and you want to sway along to small town stories of love lost and gained between dusk and dawn.  Despite it all, as the titular songs goes, &ldquo;You gotta stay positive.&#8221;  Cue the &#8220;woah&#8221;s.</p>
-
-<p><strong>05.  Coldplay &ndash; Viva la Vida</strong>
-Sometime after <u>X&amp;Y</u> came out in 2005, Chris Martin disowned the lyrics he wrote for the album.  He claimed that he rushed the writing process and that it wasn&rsquo;t far to his fans, to his band, and to himself.  Three years later and looking for redemption, Coldplay releases Viva la Vida an epic, swirlingly melodic tour de force.  From the bright, leaping piano in &ldquo;Life in Technicolor&rdquo; to the gang vocal finale in &ldquo;Death and All His Friends&rdquo;, <u>Viva la Vida</u> remains relentless.  The dynamics roll beautifully from song to song, and even the slow tracks sound pulsing and full of live.  And the lyrics&hellip; Chris Martin sounds older, wiser, and in many ways, more vigorous than ever.  By accepting himself, his age, and his maturity, the frontman&rsquo;s delivery is more confident and honest  than it&rsquo;s been since <u>Parachutes</u>.  Growing up has never sounded so good.</p>
-
-<p><strong>04.  Vampire Weekend</strong>
-On first listen, this album will make you smile.  By the third run-through, you&rsquo;ll be singing along.  A few more listens, and you&rsquo;ll have the album down pat, but the thing is, you&rsquo;ll never get sick of it.  The beauty of Vampire Weekend&rsquo;s debut, self-titled full-length album is it&rsquo;s ability to remain fresh while quickly becoming familiar.  The record is pop goodness, through and through, and for that and that alone, VW grabs the four spot in this year&rsquo;s Top 10.</p>
-
-<p><strong>03.  Valencia &ndash; We All Need a Reason to Believe</strong>
-Valencia doesn&rsquo;t seem to know what the term &ldquo;sophomore slump&rdquo; means.  With their second full-length effort, the Philadelphia band blew their mediocre first record out of the water, embracing drum fills, gang vocals, and &ldquo;woah&#8221;s like never before.  Somehow a tired formula feels reinvigorated.  Every song has a hook from the &#8220;ho-oh-oh-ohme&rdquo; in &ldquo;Safe to Say&rdquo; to the titular lyric in &ldquo;Holiday&rdquo;.  Pop-punk hasn&rsquo;t sounded this good in years.  Call it a revival.  Call it a renaissance.  Call it a fresh start.  Pop-punk is back, and Valencia is waving the flag at the frontline of the battle.</p>
-
-<p><strong>02.  Kanye West &ndash; 808s and Heartbreak</strong>
-I&rsquo;ll admit it.  I&rsquo;m a Kanye West apologist, but let&rsquo;s look at this album from two distinct perspectives.  With the first, Mr. West put his name on the line for what is essentially an experimental side-project album in his discography of nearly flawless rap-pop.  The artist decided he wanted to create something heart-bleedingly honest, different, and hopefully through that truth, beauty would emerge.  This is the <u>Kid A</u> of Kanye&rsquo;s collection of work.  Cinematic and large, the album is purposeful but never forced.  &ldquo;Streetlights&rdquo;, a song that has yet to be released as a single, is easily the best song of 2008 from any genre with its simple piano line and simple lyrics of hope, Kanye is able to give the listener a visual like no other.  An introspective, and still brilliant look, from such a public figure is so rare, and for West to be able to humanize himself to such a degree is a feat in and of itself.  What an experiment.  I can&rsquo;t wait for him to return to his regular rap form with his next release.</p>
-
-<p><strong>01.  The Gaslight Anthem &ndash; The &lsquo;59 Sound</strong>
-Mad, frantic, and desperate, The Gaslight Anthem&rsquo;s <u>The &#8216;59 Sound</u> is the new pop-punk.  If you grew up listening to Blink 182 and New Found Glory, this is your graduation.  Reeking of reflection and waning innocence, this album was surely written after many nights of emptying bottles on front porches with old friends.  Despite the demure this description might imply, the whole album makes you want to run downtown soaking up every last bit of life possible before last call sends you on your next adventure.  The guitar tones ring, the drums pound, and the punk ethos stays true.  Pick up this album and feel alive.</p>
 ]]></content>
   </entry>
   
