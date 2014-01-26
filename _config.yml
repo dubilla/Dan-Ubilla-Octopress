@@ -4,10 +4,10 @@
 
 url: http://danubilla.com
 title: Dan Ubilla
-subtitle: A Web Developer's blog focusing on JavaScript, Rails, and CSS.
+subtitle: A Software Developer's blog focusing on JavaScript, Rails, and CSS.
 author: Dan Ubilla
 simple_search: http://google.com/search
-description: A Web Developer's blog focusing on JavaScript, Rails, and CSS.
+description: A Software Developer's blog focusing on JavaScript, Rails, and CSS.
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
