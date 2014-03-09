@@ -4,7 +4,7 @@
   <title><![CDATA[Dan Ubilla]]></title>
   <link href="http://danubilla.com/atom.xml" rel="self"/>
   <link href="http://danubilla.com/"/>
-  <updated>2014-01-26T17:02:52-05:00</updated>
+  <updated>2014-03-09T18:40:59-04:00</updated>
   <id>http://danubilla.com/</id>
   <author>
     <name><![CDATA[Dan Ubilla]]></name>
@@ -12,6 +12,45 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Creating a New Post for Octopress from Zsh]]></title>
+    <link href="http://danubilla.com/blog/web-development/creating-a-new-post-for-octopress-from-zsh.html"/>
+    <updated>2014-01-31T00:17:00-05:00</updated>
+    <id>http://danubilla.com/blog/web-development/creating-a-new-post-for-octopress-from-zsh</id>
+    <content type="html"><![CDATA[<p>A couple of years back, I made the switch from bash to zsh. I did so mainly because I saw <a href="" title="http://code.tutsplus.com/tutorials/how-to-customize-your-command-prompt--net-24083&quot;, &quot;Customizing Your Command Prompt on Nettuts">a fantastic post</a> on customizing the command prompt that I dove into head first, and I&rsquo;ve stuck with it for the slightly improved tab completion. Your mileage may vary with regards to zsh, but I always find it difficult to do without it when I end up working on somebody else&rsquo;s machine. Despite the improvement, there are a few differences between the shells, and I&rsquo;ve come across a scipt or two that wasn&rsquo;t especially zsh friendly. One of those is the very rake task that created this blog post.</p>
+
+<!-- more -->
+
+
+<p>To create a post in Octopress from bash, you simply need to run the command:</p>
+
+<blockquote><p>rake new_post[&ldquo;One man forgot to account for zsh&hellip;&rdquo;]</p></blockquote>
+
+<p>Running the same command from zsh leaves you with a cryptic error:</p>
+
+<blockquote><p>zsh: no matches found: new_post[One man forgot to account for zsh&hellip;]</p></blockquote>
+
+<p>Zsh escapes the quotes necessary to name the new blog post, as you can see by the error that is output. The syntax that creates a blog post in bash causes zsh to begin attempting to match a filename.</p>
+
+<p>To create a post in Octopress from zsh, you simply need to run the command:</p>
+
+<blockquote><p>rake &ldquo;new_post[One man forgot to account for zsh&hellip;]&rdquo;</p></blockquote>
+
+<p>It&rsquo;s a minor inconvenience, and one that could probably be solved by some extended documentation on the Octopress site. No harm, no foul; zsh Octopress bloggers just need to remember the change in syntax.</p>
+
+<p>Any other zsh tips for Octopress? Or any noteworthy zsh &ldquo;workarounds&rdquo; to share? Drop them in comments.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA['stringify_keys' Error on update_attribute]]></title>
+    <link href="http://danubilla.com/blog/stringify-keys-error-on-update-attribute.html"/>
+    <updated>2014-01-31T00:16:00-05:00</updated>
+    <id>http://danubilla.com/blog/stringify-keys-error-on-update-attribute</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Introducing MaxWell]]></title>
@@ -26,6 +65,27 @@
 <p>All in all, I could not be more pleased with the single-page web app tools I&rsquo;ve discovered and workflow I&rsquo;ve cultivated. Now that I have the workflow in place, I&rsquo;m already looking to the next side project, FoursightSquare, to see just how quickly I can spin up a web app, start iterating on it, and deploy quickly with each iteration. You can follow along in the meanwhile on its Github page.</p>
 
 <p>It&rsquo;s important to note that MaxWell is a proof of concept with hard-coded values. Given an API, this web app could exist in its current form, or, in an API&rsquo;s absence, this app could be pushed to ESPN&rsquo;s servers and hooked up with just a little bit of server-side code.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Pushing Your Octopress Blog to Github]]></title>
+    <link href="http://danubilla.com/blog/web-development/pushing-your-octopress-blog-to-github.html"/>
+    <updated>2013-08-25T14:12:00-04:00</updated>
+    <id>http://danubilla.com/blog/web-development/pushing-your-octopress-blog-to-github</id>
+    <content type="html"><![CDATA[<p>I have just gotten started using the Octopress framework for blogging, and I love it. The setup process is unbelievably well-documented, and if you&rsquo;re familiar with Git and Ruby projects, you&rsquo;ll pick it up fairly quickly. The only issue I had early on was pushing my new blog up to Github for version control. It&rsquo;s a little tricky since the first step is cloning from Brandon Mathis&#8217; Octopress repo, but the fix is relatively simple.</p>
+
+<!-- more -->
+
+
+<p>Once you&rsquo;ve clone the Octopress project, thrown up a few posts, and tidied up any configuration you want, you&rsquo;re going to want to get the repo into version control using Git. If you&rsquo;re like me, you&rsquo;re also going to want to push it up to Github. I was surprised upon first trying to do this, that my repo was already set up with a remote named origin. Of course, it was; I had cloned from the Octopress repo. I went ahead and pulled a quick switcheroo before add the remote Github origin.</p>
+
+<blockquote><p>git rename remote clone
+git add remote origin [github url]</p></blockquote>
+
+<p>It feels a little hacky, but it got the trick done.</p>
+
+<p>Pretty fitting that I&rsquo;m writing about using Octopress as my first post written on the service, huh?</p>
 ]]></content>
   </entry>
   
@@ -426,97 +486,6 @@ Yeah, I was pretty angst-y and heartbroken when I wrote all of those songs. And 
 <p>&ldquo;People think I&rsquo;m crazy to put myself through such torture, though I would argue otherwise.  Somewhere along the line we seem to have confused comfort with happiness.&rdquo;</p>
 
 <p>&ldquo;You only live once, but if you work it right, once is enough.&rdquo;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Final Frontier]]></title>
-    <link href="http://danubilla.com/blog/movies/the-final-frontier.html"/>
-    <updated>2009-05-28T22:38:00-04:00</updated>
-    <id>http://danubilla.com/blog/movies/the-final-frontier</id>
-    <content type="html"><![CDATA[<blockquote>The following is spoiler intense for both the new Star Trek movie and the season finale of LOST.  Consider yourself warned.</blockquote>
-
-
-<p><img class="aligncenter size-medium wp-image-45" src="http://danubilla.com/images/www/lost-star-trek.jpg" width="300" height="176" title="lost star trek" alt="Star Trek"></p>
-
-<p>A readers&#8217; appreciation for literature has always been rooted in their relation for the characters involved.  For some, this means a detachment from their personal lives.  Middle-aged housewives might prefer a romance novel about twenty-somethings; a young boy&rsquo;s favorite story could be about pirates.  Others enjoy stories because they see themselves as the leading men and women.</p>
-
-<p>The most prevalent complaint in Hollywood in recent years has been of the lack of originality in new content.  Sequels and remakes litter television and movie theatres while viewers wonder slightly less rhetorically with each passing summer: has every story been told?  Hope in the infinity of creativity has ekpt me from giving up, and after endless drivel has been presented for mine and everyone&rsquo;s consumption, there may be a master storyteller ready to reflect life and mimic art in an amazingly innovative and entertaining way.  JJ Abrams wants us to rethink the facet of life we understand the least to begin with: time.</p>
-
-<!-- more -->
-
-
-<p>Time has been at the center of countless, fantastic works, but never has it presented and turned so many themes on their heads as it has in Abrams&#8217; LOST and Star Trek.</p>
-
-<p>In LOST, the end of Season 5 asks us if the failure is always worth the lesson.  Jack risks everything at the chance to erase the past three years (and five seasons).  Erasing the misery would regress the growth.  This is something Lock understands as he tells Sawyer earlier this season that opening the hatch was painful, but ultimately made him the strong, confident leader he became.  The dichotomy of pleasure and pain is often debated, but Jack is given the ultimate choice in trading in his pain.  What will he receive?  The entire concept is reminiscent of Aldous Huxley&rsquo;s &ldquo;Brave New World&rdquo;, where a Utopian society is created through use of a drug that numbs all feeling and emotion making its citizens autonomous creatures.  The LOST season ends in a cliffhanger for the ages, and we&rsquo;ll have to wait until 2010 to discover what themes Abrams wishes to present.  In the meanwhile, we&rsquo;re lucky to be stuck in a limbo, to decide for ourselves what we&rsquo;d like to see.  I&rsquo;m personally pulling for the plane to crash regardless, and the season to open with Jack and company approaching the foot of the statue.</p>
-
-<p>Star Trek, a holy tenet of the science fiction zeitgeist, was built up to be another retread, another reboot a la &ldquo;Casino Royale&rdquo; and &ldquo;Batman Begins&rdquo;.  Instead, JJ Abrams surprised everyone by using time travel to create a thinkpiece on missed chances, redemption, and, of course, destiny.  LOST studies these themes to varying degrees of depth, with destiny as the starring theme, but while the characters of LOST question changing their present from the past, Star Trek takes a different angle.  In the movie, Jimmy Kirk&rsquo;s destiny is taken off-course when the past is changed and his father is killed in an act of heroism.  Despite this detour in his life, enough events transpire to course-correct, another popular topic in the fifth season of LOST, and Kirk eventually takes the captain&rsquo;s chair.  Redemption is usually seen in action movies when the superhero considers taking off the mask and retiring, or the cop begins to question if he&rsquo;s making a sincere difference.  With time travel pushing the plot along, these rules have changed.  In his experiences, Kirk has lost nothing, so how do you redeem yourself from actions that have never happened?  Another hypothetical courtesy of time twisting.</p>
-
-<p>Time travel as a motif and plot device has a strength greater than most.  Even if this new trend will leak out of the Bad Robot camp, it&rsquo;s hard to say whether the general public will accept it.  If it&rsquo;s able to make the jump from niche towards genre, there will be some great stories to tell.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Short and Long of Pressure]]></title>
-    <link href="http://danubilla.com/blog/sociology/the-short-and-long-of-pressure.html"/>
-    <updated>2009-05-20T22:30:00-04:00</updated>
-    <id>http://danubilla.com/blog/sociology/the-short-and-long-of-pressure</id>
-    <content type="html"><![CDATA[<p>Coming out of the microcosm that is college can be startling.  In fact, it should be down right frightening.  For the majority of us, the bubble is all we know on a regular basis.  We&rsquo;re ferried from grade to grade, school to school in little societies where age is the most common of denominators.  Conditioned, we begin to expect similar answers to standard questions, and we in turn slowly bend and conform to return the expected answers.  Which is why at the age of 23 I found myself taken aback and confused as I built up a rapport with the 28 year-old girl (woman?) on the bus seat to my left.</p>
-
-<!-- more -->
-
-
-<p>It was a harmless query about parenthood ambiguously near or far into our respective futures.  I was conditioned to expect, &ldquo;I don&rsquo;t even want to think about it.&rdquo;  My like response was prepared before she answered my question surprisingly genuinely.  Of course, the mid-20s bring about great changes, particularly and hopefully, a great leap forward in maturity, but the societal norms did not always dictate this trend.  Our need to have common experiences with our peers leads to affirmative peer pressure in the short-term and equally negative pressures in the long-term.</p>
-
-<p>Consider the last time you were persuaded towards an immediate experience.  Chances are it was to go out, not to stay in, to try something, not to avoid it.  In the long-term, it&rsquo;s empirical persuasion tends to occur negatively and allegorically.  A relative dropping out of school or a classmate becoming pregnant are both negative experiences that lead others away from similar fates.</p>
-
-<p>Immediate peer pressures are positive because they will be instantly fulfilling most likely in nature but certainly in scope.  These commonalities among peer groups forge stories that, with each retelling, create a stronger bond.</p>
-
-<p>The allegorical, long-term pressures merely aim to set up the immediate variety: going to college, getting a job, getting married.  All of these, depending on socioeconomical factors, set up more potential for tighter commonalities across a peer group.</p>
-
-<p>It&rsquo;s interesting to note how this, perhaps, instinct to create multitudes of experiences comes together.  A few final questions: common experiences create a familiarity and build a relationship, so is this instinct an animalistic, long-held one to give our packs numbers for survival, or is it a more human desire for a greater sense of intimacy?  What would following the inverse of positive, short-term and negative, long-term pressure grant someone?  The converse?</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Top Ten Albums of 2008]]></title>
-    <link href="http://danubilla.com/blog/music/top-ten-albums-of-2008.html"/>
-    <updated>2009-04-18T19:53:00-04:00</updated>
-    <id>http://danubilla.com/blog/music/top-ten-albums-of-2008</id>
-    <content type="html"><![CDATA[<p>Since the IRS gives us a solid three and a half months to get our financial papers in order, the same amount of time should be granted for a matter much more important: my top ten albums of last year.  As always, each of these albums was originally released in the calendar year.</p>
-
-<!-- more -->
-
-
-<p><strong>10.  City and Colour -Bring Me Your Love</strong>
-A whiskey-soaked voice over a minimalist acoustic backdrop has been done before, but Dallas Green&rsquo;s melodies bound and float easily on his second album.  The dynamics of acoustic guitar  really invoke a larger meaning than most coffeehouse emulators can hope for.  Of course the whiskey in the voice matches the solitary motifs in the lyrics.  Here&rsquo;s the soundtrack to your winter, snowy walk.</p>
-
-<p><strong>09.  Tokyo Police Club &ndash; Elephant Shell</strong>
-<u>Elephant Shell</u> is confidence creeping up your body.  It is light starting at your knees and energy slowly shooting to your shoulders.  Sparse instrumentation doesn&rsquo;t usually excite, but the drums pick up where melodies leave off and do more than just merely handle the load.  The words behind it all ring catchy with more than enough interwoven subjects between songs to allow for mighty leaps in interpretation.  The strength is in the subtlety.</p>
-
-<p><strong>08.  Jack&rsquo;s Mannequin &ndash; The Glass Passenger</strong>
-If Jack&rsquo;s first album <u>Everything in Transit</u> is the summer, then <u>The Glass Passenger</u> is the fall.  If <u>Everything in Transit</u> is blind hope, then <u>The Glass Passenger</u> is optimism laced with nostalgia.  <u>The Glass Passenger</u> runs flush with maturity.  It is a grandiose statement to perseverance through pop.  The power of McMahon&rsquo;s piano is aided through excellent dynamism in the production.  Check out &ldquo;Swim&rdquo; and &ldquo;Hammers and Strings&rdquo; for a sample of the spectrum running through the other eleven tracks.</p>
-
-<p><strong>07.  T.I. &ndash; Paper Trail</strong>
-All the talk in the rap world was focused on one man, whose album can be found on countless 2008 Top Ten Lists.  This is not that man, and this is not that album.  While T.I. may have his own legal troubles, <u>Paper Trail</u> was the class act of the rap game last year.  With themes of redemption, innocence and guilt, and atonement, T.I. can shed his reputation of a rapper meant for the club and officially claim the title of a rap artist.  It&rsquo;s not that T.I. didn&rsquo;t sprinkle in his usual radio fodder, but even those tracks are polished smoother and a couple even have a deeper meaning than Clifford J. Harris has used before.  The production is standard, and yet it works.  It shines just enough while giving T.I. ample room to spit his message.  I can&rsquo;t believe it, but here&rsquo;s T.I. on this year&rsquo;s Top 10.</p>
-
-<p><strong>06.  The Hold Steady &ndash; Stay Positive</strong>
-The troubadours of allusionary heartache maintain a steady groove with their latest effort, <u>Stay Postive</u>.  Calling the album a sequel to their 2005 record, <u>Boys and Girls in America</u> is much more of a compliment than it might sound.  By throwing in pieces of lyrics from old songs, their new work really does come across as the next stage in an almgamation of unnamed characters the boys have created throughout the years, which gives their base work a much greater sense of cohesion.  The songs pop, and you want to sway along to small town stories of love lost and gained between dusk and dawn.  Despite it all, as the titular songs goes, &ldquo;You gotta stay positive.&#8221;  Cue the &#8220;woah&#8221;s.</p>
-
-<p><strong>05.  Coldplay &ndash; Viva la Vida</strong>
-Sometime after <u>X&amp;Y</u> came out in 2005, Chris Martin disowned the lyrics he wrote for the album.  He claimed that he rushed the writing process and that it wasn&rsquo;t far to his fans, to his band, and to himself.  Three years later and looking for redemption, Coldplay releases Viva la Vida an epic, swirlingly melodic tour de force.  From the bright, leaping piano in &ldquo;Life in Technicolor&rdquo; to the gang vocal finale in &ldquo;Death and All His Friends&rdquo;, <u>Viva la Vida</u> remains relentless.  The dynamics roll beautifully from song to song, and even the slow tracks sound pulsing and full of live.  And the lyrics&hellip; Chris Martin sounds older, wiser, and in many ways, more vigorous than ever.  By accepting himself, his age, and his maturity, the frontman&rsquo;s delivery is more confident and honest  than it&rsquo;s been since <u>Parachutes</u>.  Growing up has never sounded so good.</p>
-
-<p><strong>04.  Vampire Weekend</strong>
-On first listen, this album will make you smile.  By the third run-through, you&rsquo;ll be singing along.  A few more listens, and you&rsquo;ll have the album down pat, but the thing is, you&rsquo;ll never get sick of it.  The beauty of Vampire Weekend&rsquo;s debut, self-titled full-length album is it&rsquo;s ability to remain fresh while quickly becoming familiar.  The record is pop goodness, through and through, and for that and that alone, VW grabs the four spot in this year&rsquo;s Top 10.</p>
-
-<p><strong>03.  Valencia &ndash; We All Need a Reason to Believe</strong>
-Valencia doesn&rsquo;t seem to know what the term &ldquo;sophomore slump&rdquo; means.  With their second full-length effort, the Philadelphia band blew their mediocre first record out of the water, embracing drum fills, gang vocals, and &ldquo;woah&#8221;s like never before.  Somehow a tired formula feels reinvigorated.  Every song has a hook from the &#8220;ho-oh-oh-ohme&rdquo; in &ldquo;Safe to Say&rdquo; to the titular lyric in &ldquo;Holiday&rdquo;.  Pop-punk hasn&rsquo;t sounded this good in years.  Call it a revival.  Call it a renaissance.  Call it a fresh start.  Pop-punk is back, and Valencia is waving the flag at the frontline of the battle.</p>
-
-<p><strong>02.  Kanye West &ndash; 808s and Heartbreak</strong>
-I&rsquo;ll admit it.  I&rsquo;m a Kanye West apologist, but let&rsquo;s look at this album from two distinct perspectives.  With the first, Mr. West put his name on the line for what is essentially an experimental side-project album in his discography of nearly flawless rap-pop.  The artist decided he wanted to create something heart-bleedingly honest, different, and hopefully through that truth, beauty would emerge.  This is the <u>Kid A</u> of Kanye&rsquo;s collection of work.  Cinematic and large, the album is purposeful but never forced.  &ldquo;Streetlights&rdquo;, a song that has yet to be released as a single, is easily the best song of 2008 from any genre with its simple piano line and simple lyrics of hope, Kanye is able to give the listener a visual like no other.  An introspective, and still brilliant look, from such a public figure is so rare, and for West to be able to humanize himself to such a degree is a feat in and of itself.  What an experiment.  I can&rsquo;t wait for him to return to his regular rap form with his next release.</p>
-
-<p><strong>01.  The Gaslight Anthem &ndash; The &lsquo;59 Sound</strong>
-Mad, frantic, and desperate, The Gaslight Anthem&rsquo;s <u>The &#8216;59 Sound</u> is the new pop-punk.  If you grew up listening to Blink 182 and New Found Glory, this is your graduation.  Reeking of reflection and waning innocence, this album was surely written after many nights of emptying bottles on front porches with old friends.  Despite the demure this description might imply, the whole album makes you want to run downtown soaking up every last bit of life possible before last call sends you on your next adventure.  The guitar tones ring, the drums pound, and the punk ethos stays true.  Pick up this album and feel alive.</p>
 ]]></content>
   </entry>
   
