@@ -4,7 +4,7 @@
   <title><![CDATA[Category: web-development | Dan Ubilla]]></title>
   <link href="http://danubilla.com/blog/categories/web-development/atom.xml" rel="self"/>
   <link href="http://danubilla.com/"/>
-  <updated>2014-03-09T18:44:38-04:00</updated>
+  <updated>2014-03-28T22:36:36-04:00</updated>
   <id>http://danubilla.com/</id>
   <author>
     <name><![CDATA[Dan Ubilla]]></name>
@@ -44,6 +44,36 @@
   </entry>
   
   <entry>
+    <title type="html"><![CDATA['stringify_keys' Error on update_attribute]]></title>
+    <link href="http://danubilla.com/blog/web-development/stringify-keys-error-on-update-attribute.html"/>
+    <updated>2014-01-31T00:16:00-05:00</updated>
+    <id>http://danubilla.com/blog/web-development/stringify-keys-error-on-update-attribute</id>
+    <content type="html"><![CDATA[<p>Rails is a fantastic framework to develop with, but it can occasionally be unforgiving when it comes to error throwing. I was recently coding up a soft delete method in a model when Rails gave me the perplexing error: &ldquo;Undefined Method `stringify_keys'&rdquo;. I wasn&rsquo;t calling stringify_keys anywhere in my method nor was it anywhere in my model. A grep through the app directory of the codebase came up empty as well, and I was stumped.</p>
+
+<!-- more -->
+
+
+<p>As it turns out, the error was being thrown from deeper in the code than in my application, but it was, in fact, my code that was in error.</p>
+
+<p><code>[Ruby] [The update_attributes method in error]
+def remove!
+  self.update_attributes(:status, 'removed')
+end
+</code></p>
+
+<p>The error lies in the arguments that are being passed into update_attributes. update_attributes expects one argument, a hash, whereas, I am providing two arguments, a key and a value. The error is exactly four characters long. The corrected code is below.</p>
+
+<p><code>[Ruby] [The corrected update_attributes]
+def remove!
+  self.update_attributes(status =&gt; 'removed')
+end
+</code></p>
+
+<p>h/t to <a href="http://stackoverflow.com/questions/7542774/undefined-method-stringify-keys-when-calling-update-attributes">Stack Overflow</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Introducing MaxWell]]></title>
     <link href="http://danubilla.com/blog/web-development/introducing-maxwell.html"/>
     <updated>2013-09-04T11:48:00-04:00</updated>
@@ -56,27 +86,6 @@
 <p>All in all, I could not be more pleased with the single-page web app tools I&rsquo;ve discovered and workflow I&rsquo;ve cultivated. Now that I have the workflow in place, I&rsquo;m already looking to the next side project, FoursightSquare, to see just how quickly I can spin up a web app, start iterating on it, and deploy quickly with each iteration. You can follow along in the meanwhile on its Github page.</p>
 
 <p>It&rsquo;s important to note that MaxWell is a proof of concept with hard-coded values. Given an API, this web app could exist in its current form, or, in an API&rsquo;s absence, this app could be pushed to ESPN&rsquo;s servers and hooked up with just a little bit of server-side code.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Pushing Your Octopress Blog to Github]]></title>
-    <link href="http://danubilla.com/blog/web-development/pushing-your-octopress-blog-to-github.html"/>
-    <updated>2013-08-25T14:12:00-04:00</updated>
-    <id>http://danubilla.com/blog/web-development/pushing-your-octopress-blog-to-github</id>
-    <content type="html"><![CDATA[<p>I have just gotten started using the Octopress framework for blogging, and I love it. The setup process is unbelievably well-documented, and if you&rsquo;re familiar with Git and Ruby projects, you&rsquo;ll pick it up fairly quickly. The only issue I had early on was pushing my new blog up to Github for version control. It&rsquo;s a little tricky since the first step is cloning from Brandon Mathis' Octopress repo, but the fix is relatively simple.</p>
-
-<!-- more -->
-
-
-<p>Once you&rsquo;ve clone the Octopress project, thrown up a few posts, and tidied up any configuration you want, you&rsquo;re going to want to get the repo into version control using Git. If you&rsquo;re like me, you&rsquo;re also going to want to push it up to Github. I was surprised upon first trying to do this, that my repo was already set up with a remote named origin. Of course, it was; I had cloned from the Octopress repo. I went ahead and pulled a quick switcheroo before add the remote Github origin.</p>
-
-<blockquote><p>git rename remote clone
-git add remote origin [github url]</p></blockquote>
-
-<p>It feels a little hacky, but it got the trick done.</p>
-
-<p>Pretty fitting that I&rsquo;m writing about using Octopress as my first post written on the service, huh?</p>
 ]]></content>
   </entry>
   

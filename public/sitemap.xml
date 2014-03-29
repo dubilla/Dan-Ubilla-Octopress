@@ -95,18 +95,14 @@
         <lastmod>2014-01-26T14:17:07-05:00</lastmod>
     </url>
     <url>
-        <loc>
-            http://danubilla.com/blog/web-development/pushing-your-octopress-blog-to-github.html
-        </loc>
-        <lastmod>2014-01-26T14:17:07-05:00</lastmod>
-    </url>
-    <url>
         <loc>http://danubilla.com/blog/web-development/introducing-maxwell.html</loc>
         <lastmod>2014-01-26T14:17:07-05:00</lastmod>
     </url>
     <url>
-        <loc>http://danubilla.com/blog/stringify-keys-error-on-update-attribute.html</loc>
-        <lastmod>2014-03-09T18:21:24-04:00</lastmod>
+        <loc>
+            http://danubilla.com/blog/web-development/stringify-keys-error-on-update-attribute.html
+        </loc>
+        <lastmod>2014-03-28T22:34:05-04:00</lastmod>
     </url>
     <url>
         <loc>
@@ -116,11 +112,11 @@
     </url>
     <url>
         <loc>http://danubilla.com/blog/archives/</loc>
-        <lastmod>2014-03-09T18:28:38-04:00</lastmod>
+        <lastmod>2014-03-28T22:34:05-04:00</lastmod>
     </url>
     <url>
         <loc>http://danubilla.com/</loc>
-        <lastmod>2014-03-09T18:28:38-04:00</lastmod>
+        <lastmod>2014-03-28T22:34:05-04:00</lastmod>
     </url>
     <url>
         <loc>http://danubilla.com/portfolio.html</loc>
