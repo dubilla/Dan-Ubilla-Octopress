@@ -4,7 +4,7 @@
   <title><![CDATA[Dan Ubilla]]></title>
   <link href="http://danubilla.com/atom.xml" rel="self"/>
   <link href="http://danubilla.com/"/>
-  <updated>2014-03-09T18:44:38-04:00</updated>
+  <updated>2014-03-28T23:00:32-04:00</updated>
   <id>http://danubilla.com/</id>
   <author>
     <name><![CDATA[Dan Ubilla]]></name>
@@ -12,6 +12,42 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA['stringify_keys' Error on update_attribute]]></title>
+    <link href="http://danubilla.com/blog/web-development/stringify-keys-error-on-update-attribute.html"/>
+    <updated>2014-03-30T09:30:00-04:00</updated>
+    <id>http://danubilla.com/blog/web-development/stringify-keys-error-on-update-attribute</id>
+    <content type="html"><![CDATA[<p>Rails is a fantastic framework to develop with, but it can occasionally be unforgiving when it comes to error throwing. I was recently coding up a soft delete method in a model when Rails gave me the perplexing error: &ldquo;Undefined Method `stringify_keys&#8217;&rdquo;. I wasn&rsquo;t calling stringify_keys anywhere in my method nor was it anywhere in my model. A grep through the app directory of the codebase came up empty as well, and I was stumped.</p>
+
+<!-- more -->
+
+
+<p>As it turns out, the error was being thrown from deeper in the code than in my application, but it was, in fact, my code that was in error.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">remove!</span>
+</span><span class='line'>  <span class="nb">self</span><span class="o">.</span><span class="n">update_attributes</span><span class="p">(</span><span class="ss">:status</span><span class="p">,</span> <span class="s1">&#39;removed&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The error lies in the arguments that are being passed into update_attributes. update_attributes expects one argument, a hash, whereas, I am providing two arguments, a key and a value. The error is exactly four characters long. The corrected code is below.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">remove!</span>
+</span><span class='line'>  <span class="nb">self</span><span class="o">.</span><span class="n">update_attributes</span><span class="p">(</span><span class="n">status</span> <span class="o">=&gt;</span> <span class="s1">&#39;removed&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>h/t to <a href="http://stackoverflow.com/questions/7542774/undefined-method-stringify-keys-when-calling-update-attributes">Stack Overflow</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Creating a New Post for Octopress from Zsh]]></title>
@@ -40,15 +76,6 @@
 <p>It&rsquo;s a minor inconvenience, and one that could probably be solved by some extended documentation on the Octopress site. No harm, no foul; zsh Octopress bloggers just need to remember the change in syntax.</p>
 
 <p>Any other zsh tips for Octopress? Or any noteworthy zsh &ldquo;workarounds&rdquo; to share? Drop them in comments.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA['stringify_keys' Error on update_attribute]]></title>
-    <link href="http://danubilla.com/blog/stringify-keys-error-on-update-attribute.html"/>
-    <updated>2014-01-31T00:16:00-05:00</updated>
-    <id>http://danubilla.com/blog/stringify-keys-error-on-update-attribute</id>
-    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
