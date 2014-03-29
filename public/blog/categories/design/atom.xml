@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | Dan Ubilla]]></title>
   <link href="http://danubilla.com/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://danubilla.com/"/>
-  <updated>2014-03-09T18:41:20-04:00</updated>
+  <updated>2014-03-09T18:44:38-04:00</updated>
   <id>http://danubilla.com/</id>
   <author>
     <name><![CDATA[Dan Ubilla]]></name>
@@ -25,7 +25,7 @@
 
 <p>Needless to say, I went for the more simplistic route in designing a flag for my Boston-area neighborhood, Davis Square.</p>
 
-<p>{% img aligncenter size-full wp-image-143 /images/author/davis-square-flag.gif 250 168 ;davis square flag text' &lsquo;Davis Square Flag&rsquo; %}</p>
+<p><img class="aligncenter size-full wp-image-143" src="/images/author/davis-square-flag.gif" width="250" height="168" title=";davis square flag text' &lsquo;Davis Square Flag&rsquo;" ></p>
 
 <p>Have a design for your neighborhood you want to share?  Critique of mine?  Share them in the comments.</p>
 ]]></content>
