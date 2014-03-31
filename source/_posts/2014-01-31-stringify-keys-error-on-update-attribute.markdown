@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "'stringify_keys' Error on update_attribute"
+title: "'stringify_keys' Error on update_attributes"
 date: 2014-03-30 09:30
 comments: true
 categories: web-development
