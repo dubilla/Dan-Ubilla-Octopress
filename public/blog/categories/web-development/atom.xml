@@ -4,7 +4,7 @@
   <title><![CDATA[Category: web-development | Dan Ubilla]]></title>
   <link href="http://danubilla.com/blog/categories/web-development/atom.xml" rel="self"/>
   <link href="http://danubilla.com/"/>
-  <updated>2014-03-30T21:14:45-04:00</updated>
+  <updated>2016-01-31T22:41:08-05:00</updated>
   <id>http://danubilla.com/</id>
   <author>
     <name><![CDATA[Dan Ubilla]]></name>
@@ -12,6 +12,105 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[AngularUI Router and Injecting $state vs $stateParams]]></title>
+    <link href="http://danubilla.com/blog/web-development/angularui-router-and-injecting-state-vs-stateparams.html"/>
+    <updated>2016-01-31T19:31:00-05:00</updated>
+    <id>http://danubilla.com/blog/web-development/angularui-router-and-injecting-state-vs-stateparams</id>
+    <content type="html"><![CDATA[<p>AngularUI Router is the de facto routing library in the Angular world. It takes the traditional routing mechanisms, and builds a subtle, but brilliant abstraction upon them. Instead of merely listening for requests at a set of URLs, it creates the concept of a set of states, each one configurable with an optional URL. This abstraction allows for flexibility when refactoring routes, but most interestingly, it creates the concept of a current state and stores key-value parameters of that state. Both the application&rsquo;s state and state parameters are available for injection with $state and $stateParams respectively, although, as we&rsquo;ll see, only one is necessary for injection in any given controller.</p>
+
+<!-- more -->
+
+
+<p>The <code>$state</code> service provides a number of useful methods for manipulating the state as well as pertinent data on the current state. The current state parameters are accessible on the $state service at the <code>params</code> key. The <code>$stateParams</code> service returns this very same object. Hence, the <code>$stateParams</code> service is strictly a convenience service to quickly access the <code>params</code> object on the <code>$state</code> service.</p>
+
+<p><code>javascript
+angular.equals($state.params, $stateParams)
+// true
+</code></p>
+
+<p>As such, no controller should ever inject both the <code>$state</code> service and its convenience service, <code>$stateParams</code>. If the <code>$state</code> is being injected just to access the current parameters, the controller should be rewritten to inject <code>$stateParams</code> instead.</p>
+
+<p>Let&rsquo;s take a look at a few examples to could be rewritten to minimize our injections and concerns and to generally clean up our controllers.</p>
+
+<p><strong>Example: Only need to access state parameters</strong></p>
+
+<p><em>Before:</em>
+``` javascript
+MainCtrl = (function() {
+  function MainCtrl($state) {</p>
+
+<pre><code>this.label = $state.params.active;
+</code></pre>
+
+<p>  }
+})();
+app.controller(&lsquo;MainCtrl&rsquo;, [&lsquo;$state&rsquo;, MainCtrl]);
+```</p>
+
+<p><em>After:</em>
+``` javascript
+MainCtrl = (function() {
+  function MainCtrl($stateParams) {</p>
+
+<pre><code>this.label = $stateParams.active;
+</code></pre>
+
+<p>  }
+})();
+app.controller(&lsquo;MainCtrl&rsquo;, [&lsquo;$stateParams&rsquo;, MainCtrl]);
+```</p>
+
+<p>In the above example, the controller only needs to access the parameters of the current state. Injecting the <code>$state</code> service is, therefore, unnecessary. Injective the convenience service here is preferred.</p>
+
+<p><strong>Example: Need to both transition state and access params</strong></p>
+
+<p><em>Before:</em>
+``` javascript
+MainCtrl = (function() {
+  function MainCtrl($state, $stateParams) {</p>
+
+<pre><code>this.label = $stateParams.active;
+</code></pre>
+
+<p>  }</p>
+
+<p>  MainCtrl.prototype.goToBeta = function() {</p>
+
+<pre><code>this.$state.go('beta');
+</code></pre>
+
+<p>  }
+})();
+app.controller(&lsquo;MainCtrl&rsquo;, [&lsquo;$state&rsquo;, &lsquo;$stateParams&rsquo;, MainCtrl]);
+```</p>
+
+<p><em>After:</em>
+``` javascript
+MainCtrl = (function() {
+  function MainCtrl($state) {</p>
+
+<pre><code>this.label = $state.params.active;
+</code></pre>
+
+<p>  }</p>
+
+<p>  MainCtrl.prototype.goToBeta = function() {</p>
+
+<pre><code>this.$state.go('beta');
+</code></pre>
+
+<p>  }
+})();
+app.controller(&lsquo;MainCtrl&rsquo;, [&lsquo;$state&rsquo;, MainCtrl]);
+```</p>
+
+<p>In this example, we are using the <code>$state</code> service for its methods and not just for the parameters data it holds. In this case, again, we see that we do not need to inject both services. We can stick with the <code>$state</code> service and merely access the <code>params</code> key on the service.</p>
+
+<p>As your controllers increase in complexity, so, too, do the benefits of including one service or the other. The list of injected services acts as a signature for a controller. Keeping this list lean is imperative to ensuring the controller&rsquo;s purpose is communicated efficiently. Ensuring that only one of the $state and $stateParams services will only help your projects' overall readability.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA['stringify_keys' Error on update_attributes]]></title>
@@ -90,73 +189,23 @@ end
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Yeoman, Backbone, and a Smarter Client]]></title>
-    <link href="http://danubilla.com/blog/web-development/yeoman-backbone-and-a-smarter-client.html"/>
-    <updated>2013-08-24T09:29:00-04:00</updated>
-    <id>http://danubilla.com/blog/web-development/yeoman-backbone-and-a-smarter-client</id>
-    <content type="html"><![CDATA[<p>I have gone through a number of tutorials on newer front-end tools like AngularJS, Grunt, and Backbone. Nothing compares to building something of your own, though. After dipping my toe into the water numerous times before, I dove into the deep end and started combining these tools on my own.</p>
+    <title type="html"><![CDATA[Pushing Your Octopress Blog to Github]]></title>
+    <link href="http://danubilla.com/blog/web-development/pushing-your-octopress-blog-to-github.html"/>
+    <updated>2013-08-25T14:12:00-04:00</updated>
+    <id>http://danubilla.com/blog/web-development/pushing-your-octopress-blog-to-github</id>
+    <content type="html"><![CDATA[<p>I have just gotten started using the Octopress framework for blogging, and I love it. The setup process is unbelievably well-documented, and if you&rsquo;re familiar with Git and Ruby projects, you&rsquo;ll pick it up fairly quickly. The only issue I had early on was pushing my new blog up to Github for version control. It&rsquo;s a little tricky since the first step is cloning from Brandon Mathis' Octopress repo, but the fix is relatively simple.</p>
 
 <!-- more -->
 
 
-<p>I started with <a href="http://yeoman.io">Yeoman</a>, as one does. It&rsquo;s a tool to bootstrap your web app. With a few keystrokes on the command line, you have all the files you need to run a web application. Out of the box you get some good tools: the <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a>, <a href="http://jquery.com/">jQuery</a>, and <a href="http://modernizr.com/">Modernizr</a>. You&rsquo;re immediately given the option to add <a href="http://requirejs.org/">RequireJS</a> for handling JavaScript loading dependencies on top of a few other options to get your web app bootstrapped even further. Yeoman starts to get super fancy, however, with its generators. Generators are bundles that allow you to bootstrap on top of the default Yeoman options. If you&rsquo;re building an AngularJS, Backbone or Ember app, download a generator for your project before you start Yeoman up for your latest project.</p>
+<p>Once you&rsquo;ve clone the Octopress project, thrown up a few posts, and tidied up any configuration you want, you&rsquo;re going to want to get the repo into version control using Git. If you&rsquo;re like me, you&rsquo;re also going to want to push it up to Github. I was surprised upon first trying to do this, that my repo was already set up with a remote named origin. Of course, it was; I had cloned from the Octopress repo. I went ahead and pulled a quick switcheroo before add the remote Github origin.</p>
 
-<p>With Yeoman in play, I decided to go with Backbone, and running Yeoman with <a href="https://github.com/yeoman/generator-backbone">the Backbone generator</a> left me with the perfect shell of a Backbone app to get started. Backbone is an MV<em> framework designed to separate application logic from view logic. (Note the * instead of a C. There are no controllers in Backbone. Instead, much of the logic that ties up the model and the view is actually done in the view JS.) I chose Backbone over other frameworks for a couple of reasons. I really enjoy the way Backbone handles the View. I&rsquo;m able to bind my model and view, and thus, keep my HTML completely separated from whatever framework I&rsquo;m using at the time. I also enjoy the plug-and-play nature of Backbone. I get MV</em> out of the box for very little code weight. If I want to add dependency injection and AMD through RequireJS, I can run that variety of the framework. Backbone gives you options. Thirdly, I really just came across more articles and tutorials that I enjoyed from the Backbone community. When it comes down to it, the community might be the most important reason for choosing a new technology. Regardless of the framework you prefer, choose one, and get coding on the front-end, smarter and faster.</p>
+<blockquote><p>git rename remote clone
+git add remote origin [github url]</p></blockquote>
 
-<p>I&rsquo;ll save my experience with Grunt for another post. The past month of diving into these front-end technologies has been incredibly eye-opening. Client-side code tools have evolved immensely in the past couple of years, and the community creating and maintaining these tools is truly inspiring. Spinning up a web app can be daunting. Creating structure for your code can leave you paralyzed before you&rsquo;ve even begun your own project. Yeoman and Backbone are two tools I&rsquo;m ready to go to war with for every new static-site project I begin.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Git Submodules]]></title>
-    <link href="http://danubilla.com/blog/web-development/git-submodules.html"/>
-    <updated>2013-07-30T23:50:00-04:00</updated>
-    <id>http://danubilla.com/blog/web-development/git-submodules</id>
-    <content type="html"><![CDATA[<p>I normally feel fairly well-versed in Git, which is to say, I can commit code, I can see what&rsquo;s happening, and I generally know enough to not screw anything up. I thought my Git Fu was tight enough that I at least had a good grasp on all that could be done with the version control system until I came across a project that used submodules. In Git, a submodule is a connection from one repository to another. Say, for instance, you&rsquo;re working on a suite of similar products. You want each one to have its own repository. That makes plenty of sense. But suppose each of these products shared a common messaging platform. Instead of maintaining this same code across the suite of products, which would defeat a lot of the purpose of setting up a VCS, you can give it its own subrepo, and have each product in your suite set up a submodule to reference that repo. All seems well and good, but there are a few gotchas to keep in mind.</p>
+<p>It feels a little hacky, but it got the trick done.</p>
 
-<!-- more -->
-
-
-<p>Let&rsquo;s clone a repo that uses submodules down to local. You start making some changes, gunning away on some code, and you&rsquo;re feeling really good. So, you decide to check your progress so far with a good old <code>git diff</code>. Everything looks exactly as you expect except for this one bit of output:</p>
-
-<blockquote>
---- a/lib/messaging
-+++ b/lib/messaging
-</blockquote>
-
-
-<p>That seems odd. There should be all sorts of good stuff in the messaging directory. And there is, but as it turns out, your main repository, or superrepo, is not keeping track of any of the minutiae inside the subrepo. All it keeps track of is the commit id associated with that repo. When you need to update your subrepo, a simple <code>git submodule update</code> command runs through your list of submodules and pulls from each of the associated subrepos. How does your superrepo know about the submodules? That brings us to the .gitmodules file in the root of your project.</p>
-
-<p>The .gitmodules file is a git config file that contains references to each of your repo&rsquo;s submodules. Each reference consists of a name, a path to the submodule in your repo, and a link to where the subrepo can be cloned from. Going back to our example, let&rsquo;s take a look at how our suite of products would share a messaging library:</p>
-
-<blockquote>
-[submodule "messaging"]
-      path = lib/messaging
-      url = git://github.com/dubilla/Messaging.git
-</blockquote>
-
-
-<p>As you can imagine, your .gitmodules config file should be included in your repot and should NOT be listed in your .gitignore file. Solid. We&rsquo;re getting a decent handle on this whole Git submodules thing. Now let&rsquo;s go back to a simpler time when we first cloned the repo with submodule references, but this time, let&rsquo;s do things the right way by initializing our submodules locally.</p>
-
-<p>Alright, we&rsquo;ve cloned our repo, and we&rsquo;re ready to set up our submodules. We&rsquo;re combing through the directory structure, and we notice an empty <em>lib/messaging</em> directory. This is normal. The superrepo knows it has a directory there, it just has no concept of what&rsquo;s going on inside it. Let&rsquo;s forge that connection. From the root of your repo, run <code>git submodule init</code> to create your .gitmodules file. Then, run <code>git submodule update</code> to get all of the code for each submodule in your project. Voilà. You&rsquo;re up and running your cloned repo with submodules in tow.</p>
-
-<p>The title of this post is &ldquo;Git Submodules and Private Repos&rdquo;, so we&rsquo;re not quite out of the woods yet. There&rsquo;s one major caveat. If your submodule is referencing a private repo, you need to update your .gitmodules file to use a specific format for the path to that repo. That reference url must be of the format:</p>
-
-<blockquote>git@github.com:[user]/repo.git</blockquote>
-
-
-<p>Otherwise, you&rsquo;re likely to get an error stating that the repo could not be found. One last thing to note regarding updating the .gitmodules file. Sometimes editing your .gitmodules file is not enough to update your submodule references. Git submodules contain an oddly two-tiered configuration between the .gitmodules and .git/config/ files. So if you update .gitmodules and start running git submodule update and seeing an older path listed in the output, there&rsquo;s a good chance the .git/config file simply never got updated. You can fix this by hand in the file or running <code>git config submodule.[submodule].url [newurl]</code> to update the config file. This can be fairly annoying, but once submodules are set up correctly for your repo, you shouldn&rsquo;t have to update any of them on a regular basis.</p>
-
-<p>Overall, submodules seem like a tool best suited for larger products and larger teams. I don&rsquo;t have any experience regarding referencing libraries I don&rsquo;t own as submodules, which could bring in a whole new world of submodule management. Imagine tweaking the library locally to fit your projects' needs, and then getting the latest on the subrepo as commits are pushed completely separate of your implementation. While it could be very useful, you&rsquo;ll most likely have a fair amount of merging in your future. Have you dealt with submodules in this advanced way? Are you just getting started like I am? Have you started <a href="http://codingkilledthecat.wordpress.com/2012/04/28/why-your-company-shouldnt-use-git-submodules/" title="Coding Killed the Cat Blog">bemoaning submodules</a> and <a href="http://blogs.atlassian.com/2013/05/alternatives-to-git-submodule-git-subtree/" title="Atlassian Blog">praising</a> git subtrees yet? Start some talking in the comments.</p>
-
-<h4>References</h4>
-
-
-<ol>
-<li><a href="http://git-scm.com/book">Pro Git</a>: <a href="http://git-scm.com/book/en/Git-Tools-Submodules"><a href="http://git-scm.com/book/en/Git-Tools-Submodules">http://git-scm.com/book/en/Git-Tools-Submodules</a></a>, as always is fantastic and provided most of the guidance in my Git submodule education</li>
-<li><a href="https://groups.google.com/forum/#!forum/github">Github Google Groups</a>: <a href="https://groups.google.com/forum/#!topic/github/B5VuXiO3aU0"><a href="https://groups.google.com/forum/#!topic/github/B5VuXiO3aU0">https://groups.google.com/forum/#!topic/github/B5VuXiO3aU0</a></a>, paved the path to healing my private repo submodule wounds.</li>
-</ol>
-
+<p>Pretty fitting that I&rsquo;m writing about using Octopress as my first post written on the service, huh?</p>
 ]]></content>
   </entry>
   
