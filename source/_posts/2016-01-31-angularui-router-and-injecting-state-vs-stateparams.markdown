@@ -4,7 +4,7 @@ title: "AngularUI Router and Injecting $state vs $stateParams"
 date: 2016-01-31 19:31
 comments: true
 categories: web-development
-published: false
+published: true
 ---
 AngularUI Router is the de facto routing library in the Angular world. It takes the traditional routing mechanisms, and builds a subtle, but brilliant abstraction upon them. Instead of merely listening for requests at a set of URLs, it creates the concept of a set of states, each one configurable with an optional URL. This abstraction allows for flexibility when refactoring routes, but most interestingly, it creates the concept of a current state and stores key-value parameters of that state. Both the application's state and state parameters are available for injection with $state and $stateParams respectively, although, as we'll see, only one is necessary for injection in any given controller.
 
