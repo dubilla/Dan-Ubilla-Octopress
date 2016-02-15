@@ -95,6 +95,12 @@
         <lastmod>2016-01-31T18:19:46-05:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://danubilla.com/blog/web-development/pushing-your-octopress-blog-to-github.html
+        </loc>
+        <lastmod>2016-01-31T18:19:46-05:00</lastmod>
+    </url>
+    <url>
         <loc>http://danubilla.com/blog/web-development/introducing-maxwell.html</loc>
         <lastmod>2016-01-31T18:19:46-05:00</lastmod>
     </url>
@@ -117,12 +123,16 @@
         <lastmod>2016-01-31T22:58:58-05:00</lastmod>
     </url>
     <url>
+        <loc>http://danubilla.com/blog/web-development/activesupport-presence.html</loc>
+        <lastmod>2016-02-15T14:27:26-05:00</lastmod>
+    </url>
+    <url>
         <loc>http://danubilla.com/blog/archives/</loc>
-        <lastmod>2016-01-31T22:58:58-05:00</lastmod>
+        <lastmod>2016-02-15T14:27:26-05:00</lastmod>
     </url>
     <url>
         <loc>http://danubilla.com/</loc>
-        <lastmod>2016-01-31T22:58:58-05:00</lastmod>
+        <lastmod>2016-02-15T14:27:26-05:00</lastmod>
     </url>
     <url>
         <loc>http://danubilla.com/portfolio.html</loc>

@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Davis Square Flag - Dan Ubilla</title>
+  <title>Active Support Presence and the Single Line Method - Dan Ubilla</title>
   <meta name="author" content="Dan Ubilla">
 
   
-  <meta name="description" content="I came across this project for Good magazine in which a collection of designers and illustrators were called upon to design flags for their &hellip;">
+  <meta name="description" content="Ruby and Rails are both built to help us write concise, meaningful code. One pattern I constantly find myself writing is a method that returns one &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://danubilla.com/blog/design/davis-square-flag.html">
+  <link rel="canonical" href="http://danubilla.com/blog/web-development/activesupport-presence.html">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Dan Ubilla" type="application/atom+xml">
@@ -83,7 +83,7 @@
   
   <header>
     
-      <h1 class="entry-title">Davis Square Flag</h1>
+      <h1 class="entry-title">Active Support Presence and the Single Line Method</h1>
     
     
       <p class="meta">
@@ -99,23 +99,71 @@
   
 
 
-<time datetime="2010-06-26T14:10:00-04:00" pubdate data-updated="true">Jun 26<span>th</span>, 2010</time>
+<time datetime="2016-02-14T15:00:00-05:00" pubdate data-updated="true">Feb 14<span>th</span>, 2016</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>I came across <a title="Neighborhood Flags" href="http://awesome.good.is/projects/neighborhood-flags/index.html">this project</a> for Good magazine in which a collection of designers and illustrators were called upon to design flags for their respective neighborhoods.  Some were beautiful in their simplicity, others appeared to be the product of designers trying to show of their skills rather than fit the creative limitations.</p>
+<div class="entry-content"><p>Ruby and Rails are both built to help us write concise, meaningful code. One pattern I constantly find myself writing is a method that returns one thing, if it exists, or a default value. This can work well upfront, but it takes a little more care if the case gets any more complex. Fortunately, Rails has just the trick to keep the more complex case nice and lean in its ActiveSupport gem.</p>
 
 <!-- more -->
 
 
-<p>Needless to say, I went for the more simplistic route in designing a flag for my Boston-area neighborhood, Davis Square.</p>
+<p>Let&rsquo;s look at an example that works without Rails.</p>
 
-<p><img class="aligncenter size-full wp-image-143" src="/images/author/davis-square-flag.gif" width="250" height="168" title=";davis square flag text' 'Davis Square Flag'" ></p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">title</span>
+</span><span class='line'>  <span class="n">label</span> <span class="o">||</span> <span class="s1">&#39;New Page&#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>Have a design for your neighborhood you want to share?  Critique of mine?  Share them in the comments.</p>
+
+<p>The above looks great. It will return label, if it exists, or it falls back to returning &lsquo;New Page&rsquo;. I&rsquo;m pretty thrilled with it. But what if we need to <code>titleize</code> the label?</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">title</span>
+</span><span class='line'>  <span class="n">label</span><span class="o">.</span><span class="n">titleize</span> <span class="o">||</span> <span class="s1">&#39;New Page&#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Unfortunately, the above will throw an error if <code>label</code> is nil. That kind of defeats the purpose of the conditional in the first place. At this point, it&rsquo;d be easy to toss away our desire for concisement and write the following:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">title</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">label</span><span class="o">.</span><span class="n">present?</span>
+</span><span class='line'>    <span class="n">label</span><span class="o">.</span><span class="n">titleize</span>
+</span><span class='line'>  <span class="k">else</span>
+</span><span class='line'>    <span class="s1">&#39;New Page&#39;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Our new method will work. But how can we leverage Rails to make our method a little sharper? ActiveSupport comes with a <code>#presence</code> method that returns the original object, if it exists, or <code>nil</code> otherwise. Let&rsquo;s see it in action.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">title</span>
+</span><span class='line'>  <span class="n">label</span><span class="o">.</span><span class="n">titleize</span><span class="o">.</span><span class="n">presence</span> <span class="o">||</span> <span class="s1">&#39;New Page&#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Boom! Our method is nice, lean, and readable. <code>#presence</code> is the secret to manipulating and returning a variable before it exists or falling back to a default.</p>
 </div>
 
 
@@ -138,12 +186,12 @@
   
 
 
-<time datetime="2010-06-26T14:10:00-04:00" pubdate data-updated="true">Jun 26<span>th</span>, 2010</time>
+<time datetime="2016-02-14T15:00:00-05:00" pubdate data-updated="true">Feb 14<span>th</span>, 2016</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/design/'>design</a>
+    <a class='category' href='/blog/categories/web-development/'>web-development</a>
   
 </span>
 
@@ -152,7 +200,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://danubilla.com/blog/design/davis-square-flag.html" data-via="dubilla" data-counturl="http://danubilla.com/blog/design/davis-square-flag.html" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://danubilla.com/blog/web-development/activesupport-presence.html" data-via="dubilla" data-counturl="http://danubilla.com/blog/web-development/activesupport-presence.html" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -165,10 +213,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/web-development/the-importance-of-bind-in-jquery.html" title="Previous Post: The Importance of bind() in jQuery">&laquo; The Importance of bind() in jQuery</a>
+        <a class="basic-alignment left" href="/blog/web-development/angularui-router-and-injecting-state-vs-stateparams.html" title="Previous Post: AngularUI Router and Injecting $state vs $stateParams">&laquo; AngularUI Router and Injecting $state vs $stateParams</a>
       
-      
-        <a class="basic-alignment right" href="/blog/web-development/html5-and-media-queries.html" title="Next Post: HTML5 and Media Queries">HTML5 and Media Queries &raquo;</a>
       
     </p>
   </footer>
@@ -277,8 +323,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://danubilla.com/blog/design/davis-square-flag.html';
-        var disqus_url = 'http://danubilla.com/blog/design/davis-square-flag.html';
+        var disqus_identifier = 'http://danubilla.com/blog/web-development/activesupport-presence.html';
+        var disqus_url = 'http://danubilla.com/blog/web-development/activesupport-presence.html';
         var disqus_script = 'embed.js';
       
     (function () {

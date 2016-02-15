@@ -4,7 +4,7 @@
   <title><![CDATA[Category: web-development | Dan Ubilla]]></title>
   <link href="http://danubilla.com/blog/categories/web-development/atom.xml" rel="self"/>
   <link href="http://danubilla.com/"/>
-  <updated>2016-01-31T22:59:10-05:00</updated>
+  <updated>2016-02-15T14:28:04-05:00</updated>
   <id>http://danubilla.com/</id>
   <author>
     <name><![CDATA[Dan Ubilla]]></name>
@@ -12,6 +12,62 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Active Support Presence and the Single Line Method]]></title>
+    <link href="http://danubilla.com/blog/web-development/activesupport-presence.html"/>
+    <updated>2016-02-14T15:00:00-05:00</updated>
+    <id>http://danubilla.com/blog/web-development/activesupport-presence</id>
+    <content type="html"><![CDATA[<p>Ruby and Rails are both built to help us write concise, meaningful code. One pattern I constantly find myself writing is a method that returns one thing, if it exists, or a default value. This can work well upfront, but it takes a little more care if the case gets any more complex. Fortunately, Rails has just the trick to keep the more complex case nice and lean in its ActiveSupport gem.</p>
+
+<!-- more -->
+
+
+<p>Let&rsquo;s look at an example that works without Rails.</p>
+
+<p><code>ruby
+def title
+  label || 'New Page'
+end
+</code></p>
+
+<p>The above looks great. It will return label, if it exists, or it falls back to returning &lsquo;New Page&rsquo;. I&rsquo;m pretty thrilled with it. But what if we need to <code>titleize</code> the label?</p>
+
+<p><code>ruby
+def title
+  label.titleize || 'New Page'
+end
+</code></p>
+
+<p>Unfortunately, the above will throw an error if <code>label</code> is nil. That kind of defeats the purpose of the conditional in the first place. At this point, it&rsquo;d be easy to toss away our desire for concisement and write the following:</p>
+
+<p>``` ruby
+def title
+  if label.present?</p>
+
+<pre><code>label.titleize
+</code></pre>
+
+<p>  else</p>
+
+<pre><code>'New Page'
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<p>Our new method will work. But how can we leverage Rails to make our method a little sharper? ActiveSupport comes with a <code>#presence</code> method that returns the original object, if it exists, or <code>nil</code> otherwise. Let&rsquo;s see it in action.</p>
+
+<p><code>ruby
+def title
+  label.titleize.presence || 'New Page'
+end
+</code></p>
+
+<p>Boom! Our method is nice, lean, and readable. <code>#presence</code> is the secret to manipulating and returning a variable before it exists or falling back to a default.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[AngularUI Router and Injecting $state vs $stateParams]]></title>
@@ -185,24 +241,6 @@ end
 <p>All in all, I could not be more pleased with the single-page web app tools I&rsquo;ve discovered and workflow I&rsquo;ve cultivated. Now that I have the workflow in place, I&rsquo;m already looking to the next side project, FoursightSquare, to see just how quickly I can spin up a web app, start iterating on it, and deploy quickly with each iteration. You can follow along in the meanwhile on its Github page.</p>
 
 <p>It&rsquo;s important to note that MaxWell is a proof of concept with hard-coded values. Given an API, this web app could exist in its current form, or, in an API&rsquo;s absence, this app could be pushed to ESPN&rsquo;s servers and hooked up with just a little bit of server-side code.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Yeoman, Backbone, and a Smarter Client]]></title>
-    <link href="http://danubilla.com/blog/web-development/yeoman-backbone-and-a-smarter-client.html"/>
-    <updated>2013-08-24T09:29:00-04:00</updated>
-    <id>http://danubilla.com/blog/web-development/yeoman-backbone-and-a-smarter-client</id>
-    <content type="html"><![CDATA[<p>I have gone through a number of tutorials on newer front-end tools like AngularJS, Grunt, and Backbone. Nothing compares to building something of your own, though. After dipping my toe into the water numerous times before, I dove into the deep end and started combining these tools on my own.</p>
-
-<!-- more -->
-
-
-<p>I started with <a href="http://yeoman.io">Yeoman</a>, as one does. It&rsquo;s a tool to bootstrap your web app. With a few keystrokes on the command line, you have all the files you need to run a web application. Out of the box you get some good tools: the <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a>, <a href="http://jquery.com/">jQuery</a>, and <a href="http://modernizr.com/">Modernizr</a>. You&rsquo;re immediately given the option to add <a href="http://requirejs.org/">RequireJS</a> for handling JavaScript loading dependencies on top of a few other options to get your web app bootstrapped even further. Yeoman starts to get super fancy, however, with its generators. Generators are bundles that allow you to bootstrap on top of the default Yeoman options. If you&rsquo;re building an AngularJS, Backbone or Ember app, download a generator for your project before you start Yeoman up for your latest project.</p>
-
-<p>With Yeoman in play, I decided to go with Backbone, and running Yeoman with <a href="https://github.com/yeoman/generator-backbone">the Backbone generator</a> left me with the perfect shell of a Backbone app to get started. Backbone is an MV<em> framework designed to separate application logic from view logic. (Note the * instead of a C. There are no controllers in Backbone. Instead, much of the logic that ties up the model and the view is actually done in the view JS.) I chose Backbone over other frameworks for a couple of reasons. I really enjoy the way Backbone handles the View. I&rsquo;m able to bind my model and view, and thus, keep my HTML completely separated from whatever framework I&rsquo;m using at the time. I also enjoy the plug-and-play nature of Backbone. I get MV</em> out of the box for very little code weight. If I want to add dependency injection and AMD through RequireJS, I can run that variety of the framework. Backbone gives you options. Thirdly, I really just came across more articles and tutorials that I enjoyed from the Backbone community. When it comes down to it, the community might be the most important reason for choosing a new technology. Regardless of the framework you prefer, choose one, and get coding on the front-end, smarter and faster.</p>
-
-<p>I&rsquo;ll save my experience with Grunt for another post. The past month of diving into these front-end technologies has been incredibly eye-opening. Client-side code tools have evolved immensely in the past couple of years, and the community creating and maintaining these tools is truly inspiring. Spinning up a web app can be daunting. Creating structure for your code can leave you paralyzed before you&rsquo;ve even begun your own project. Yeoman and Backbone are two tools I&rsquo;m ready to go to war with for every new static-site project I begin.</p>
 ]]></content>
   </entry>
   

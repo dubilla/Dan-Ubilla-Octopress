@@ -4,7 +4,7 @@
   <title><![CDATA[Category: movies | Dan Ubilla]]></title>
   <link href="http://danubilla.com/blog/categories/movies/atom.xml" rel="self"/>
   <link href="http://danubilla.com/"/>
-  <updated>2016-01-31T22:59:10-05:00</updated>
+  <updated>2016-02-15T14:28:04-05:00</updated>
   <id>http://danubilla.com/</id>
   <author>
     <name><![CDATA[Dan Ubilla]]></name>
@@ -18,14 +18,14 @@
     <link href="http://danubilla.com/blog/movies/sleeping-off-the-hangover.html"/>
     <updated>2009-06-28T22:52:00-04:00</updated>
     <id>http://danubilla.com/blog/movies/sleeping-off-the-hangover</id>
-    <content type="html"><![CDATA[<p><img class="aligncenter" src="/images/www/hangover-header.jpg" width="300" height="199" title="&lsquo;Going Down&rsquo; &lsquo;The Hangover Wolfpack Rides an Elevator Down&rsquo;" ></p>
+    <content type="html"><![CDATA[<p>{% img aligncenter /images/www/hangover-header.jpg 300 199 &lsquo;Going Down&rsquo; &lsquo;The Hangover Wolfpack Rides an Elevator Down&rsquo; %}</p>
 
 <p>&ldquo;Really?  You haven&rsquo;t seen it yet?"  I heard these words uttered early last week, mere days after The Hangover came out.  How had a movie ripped through the 18-34 demographic so quickly and earnestly?  For an age group that responds best to star power or word-of-mouth when it comes to its comedies, an ensemble cast starring, frankly, nobody managed to beat the Will Ferrell vehicle, Land of the Lost, $43.3 to $19.5 million.  The answer isn&rsquo;t in the marketing, which was neither ubiquitous nor varied by any considerable degree.  yet the very reason for the film&rsquo;s initial success is the same that will stifle the movie&rsquo;s longevity.  The Hangover attracts two separate sects of young moviegoers, and neither faction loved the movie for reasons that will hold their attention in six months time.</p>
 
 <!-- more -->
 
 
-<p><img class="alignleft" src="/images/www/hangover-tyson.jpg" width="230" height="270" title="&lsquo;Mike Tyson&rsquo; &lsquo;A cameo by a young Tyson just seems fresher&rsquo;" ></p>
+<p>{% img alignleft /images/www/hangover-tyson.jpg 230 270 &lsquo;Mike Tyson&rsquo; &lsquo;A cameo by a young Tyson just seems fresher&rsquo; %}</p>
 
 <p>At it&rsquo;s core, The Hangover was a family movie for friends.  The economic success of family films are generally guaranteed because, well, kids can&rsquo;t go to the movies alone.  An animated movie that culls one member of a family of four, sells tickets to all four members.  Likewise, The Hangover was meant for a group of friends.  Chances are if one of your friends wanted to see the movie, all of your friends got together.  It became a miniature event of sorts.  And just like animated movies are marketed specifically to kids, The Hangover was marketed point blank at your friends that laugh at lowest common denominator humor.  If you&rsquo;re questioning this, the smoking gun was Mike Tyson, and you&rsquo;re precisely the friends that convinced the group to head to the theatre.  This is not a bad thing.  In fact, it&rsquo;s a great thing.  You brought people together.  This will not happen with the DVD release.</p>
 
@@ -35,7 +35,7 @@
 
 <p>The reasons are two-fold.  The most memorable comedies, in particular of the past decade, have relied on quotability.  Memorable quotes infuse a movie into our culture, give it life and personality even when the movie&rsquo;s not even playing.  The Hangover had none.  People walked out of Old School saying, &ldquo;I&rsquo;ll do one&rdquo;; they left Anchorman saying, &ldquo;I&rsquo;m kind of a big deal."  Audiences left The Hangover saying, "Wasn&rsquo;t that one part funny?"  Yes, yes it past-tense-was funny.</p>
 
-<p><img class="alignleft" src="/images/www/hangover-mcconaughey.jpg" width="300" height="201" title="McConaughey &lsquo;No, Matthew, I don&rsquo;t know who I want to punch more&rsquo;" ></p>
+<p>{% img alignleft /images/www/hangover-mcconaughey.jpg 300 201 McConaughey &lsquo;No, Matthew, I don&rsquo;t know who I want to punch more&rsquo; %}</p>
 
 <p>Speaking of Old School and Anchorman, the movies of the Frat Pack sound like a passage from the Bible.  Old School begat Anchorman and Wedding Crashers.  Anchorman begat Talladega Nights and The Forty-Year Old Virgin.  Virgin begat Knocked Up, ad nauseum.  There is no heirarchy, no mentorship in the cast of The Hangover.  Sure, Todd Phillips directed both The Hangover and Old School.  Yes, Zach Galifianakis steals the spotlight, and he&rsquo;s nothing more than a poor man&rsquo;s Will Ferrell.  Ed Helms simply doesn&rsquo;t have the star power his predecessor, Steve Carrell, has, and if Bradley Cooper is destined for any career in films, it&rsquo;s more Matthew McConaughey than Vince Vaughn.  The Hangover is Cooper&rsquo;s own Dazed and Confused, the best movie he&rsquo;ll put out, but Cooper can&rsquo;t even pull it off with the sort of iconic line that McConaughey pulled off.</p>
 
@@ -51,7 +51,7 @@
     <content type="html"><![CDATA[<blockquote>The following is spoiler intense for both the new Star Trek movie and the season finale of LOST.  Consider yourself warned.</blockquote>
 
 
-<p><img class="aligncenter size-medium wp-image-45" src="/images/www/lost-star-trek.jpg" width="300" height="176" title="&lsquo;lost star trek&rsquo; &lsquo;Star Trek&rsquo;" ></p>
+<p>{% img aligncenter size-medium wp-image-45 /images/www/lost-star-trek.jpg 300 176 &lsquo;lost star trek&rsquo; &lsquo;Star Trek&rsquo; %}</p>
 
 <p>A readers' appreciation for literature has always been rooted in their relation for the characters involved.  For some, this means a detachment from their personal lives.  Middle-aged housewives might prefer a romance novel about twenty-somethings; a young boy&rsquo;s favorite story could be about pirates.  Others enjoy stories because they see themselves as the leading men and women.</p>
 

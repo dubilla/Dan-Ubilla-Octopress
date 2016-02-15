@@ -4,7 +4,7 @@
   <title><![CDATA[Category: books | Dan Ubilla]]></title>
   <link href="http://danubilla.com/blog/categories/books/atom.xml" rel="self"/>
   <link href="http://danubilla.com/"/>
-  <updated>2016-01-31T22:59:10-05:00</updated>
+  <updated>2016-02-15T14:28:04-05:00</updated>
   <id>http://danubilla.com/</id>
   <author>
     <name><![CDATA[Dan Ubilla]]></name>
@@ -18,7 +18,7 @@
     <link href="http://danubilla.com/blog/books/ultramarathon-man.html"/>
     <updated>2009-06-01T01:00:00-04:00</updated>
     <id>http://danubilla.com/blog/books/ultramarathon-man</id>
-    <content type="html"><![CDATA[<p><img class="aligncenter" src="/images/www/ultramarathonman.jpg" width="158" height="250" title="&lsquo;ultramarathon man&rsquo; &lsquo;Ultramarathon Man&rsquo;" ></p>
+    <content type="html"><![CDATA[<p>{% img aligncenter /images/www/ultramarathonman.jpg 158 250 &lsquo;ultramarathon man&rsquo; &lsquo;Ultramarathon Man&rsquo; %}</p>
 
 <p>A few weeks ago, I finished up &ldquo;Ultramarathon Man&rdquo; by Dean Karnazes.  It&rsquo;s an excellent memoir by a regular guy who picked up and fell in love with beating the hell out of his body through endurance running.  I highly recommend it to anyone who&rsquo;s looking for inspiration for their workouts.</p>
 
