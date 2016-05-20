@@ -4,7 +4,7 @@
   <title><![CDATA[Dan Ubilla]]></title>
   <link href="http://danubilla.com/atom.xml" rel="self"/>
   <link href="http://danubilla.com/"/>
-  <updated>2016-03-12T11:46:53-05:00</updated>
+  <updated>2016-05-20T07:45:10-04:00</updated>
   <id>http://danubilla.com/</id>
   <author>
     <name><![CDATA[Dan Ubilla]]></name>
@@ -12,6 +12,105 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[An Introduction to Angular Testing]]></title>
+    <link href="http://danubilla.com/blog/web-development/angular-testing-by-component.html"/>
+    <updated>2016-05-17T13:46:00-04:00</updated>
+    <id>http://danubilla.com/blog/web-development/angular-testing-by-component</id>
+    <content type="html"><![CDATA[<p><a href="https://angularjs.org/">AngularJS</a> is designed to be as testable as possible. With its use of dependency injection, creating and manipulating mocks to test out individual components of your Angular application can be done in a stable, reliable way. Testing out each Angular component, however, comes with its own set of patterns to apply. Some of these patterns are similar cross-component, and using and understanding these core concepts of Angular testing can act as a nice bootstrap to your testing process.</p>
+
+<!-- more -->
+
+
+<p>There are a number of tools that can be combined to create an Angular framework. For these purposes, I&rsquo;ll be using <a href="http://coffeescript.org/">CoffeeScript</a> as a JavaScript precompiler, <a href="https://karma-runner.github.io/">Karma</a> as a test runner, <a href="https://mochajs.org/">Mocha</a> as a testing library, and <a href="http://chaijs.com/">Chai</a>, with expect syntax, as an assertion library. Before we take a look at testing Angular components, let&rsquo;s start by getting a closer look at our testing and assertion libraries.</p>
+
+<h3>Mocha and Chai</h3>
+
+<p>Let&rsquo;s start by taking a look at a very pared down of an AngularJS test, and we&rsquo;ll build on it over the course of this post.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nx">describe</span> <span class="s">&#39;TeamService&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
+</span><span class='line'>  <span class="nx">describe</span> <span class="s">&#39;exists&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
+</span><span class='line'>    <span class="p">...</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you&rsquo;ve used a test framework like RSpec or Minitest for Ruby before, the structure should look familiar. Mocha, and Jasmine, organize test assertions inside <code>describe</code> blocks. <code>describe</code> methods take two arguments: a string that should act as a human readable description for the state that follows, and a method that will contain a mix of assertions and more <code>describe</code> methods. These <code>describe</code> blocks do two things: they group specs together to help create a readable assertion and they provide a place to set up mocks for each assertion.</p>
+
+<p>Let&rsquo;s see how we can use describe blocks to set up different test scenarios using Mocha&rsquo;s beforeEach method.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nx">describe</span> <span class="s">&#39;TeamService&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
+</span><span class='line'>  <span class="nv">TeamService = </span><span class="kc">null</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">describe</span> <span class="s">&#39;when a team is passed in&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
+</span><span class='line'>    <span class="nx">beforeEach</span> <span class="nf">-&gt;</span>
+</span><span class='line'>      <span class="nv">TeamService.team =</span>
+</span><span class='line'>        <span class="nv">id: </span><span class="mi">1</span>
+</span><span class='line'>    <span class="nx">it</span> <span class="s">&#39;should should have a team&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
+</span><span class='line'>      <span class="nx">expect</span><span class="p">(</span><span class="nx">TeamService</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">have</span><span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="s">&#39;team&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="nx">describe</span> <span class="s">&#39;when a team is not passed in&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
+</span><span class='line'>    <span class="nx">it</span> <span class="s">&#39;should not have a team&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
+</span><span class='line'>      <span class="nx">expect</span><span class="p">(</span><span class="nx">TeamService</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="o">not</span><span class="p">.</span><span class="nx">have</span><span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="s">&#39;team&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>There&rsquo;s a lot going on above, so let&rsquo;s take it one thing at a time. Let&rsquo;s focus on the <code>beforeEach</code> method added above. By organizing our Angular specs into <code>describe</code> blocks that connote state, we&rsquo;re able to set up test data inside of the <code>beforeEach</code> method. <code>beforeEach</code> takes one argument: a method that will be executed before assertions are run. In fact, we&rsquo;re able to continue to nest <code>describe</code> blocks with their own <code>beforeEach</code> method, and we can be confident that they will run in order before each assertion is run. This allows us to construct specs that build state on themselves which should lead to readable, DRY tests. In the above example we describe two different states, and we&rsquo;re able to set up each using <code>beforeEach</code>.</p>
+
+<p>In order to access these variables across various <code>describe</code> blocks, we declare these variables inside the outermost <code>describe</code> block. We set our CoffeeScript variables equal to <code>null</code> as a way of declaring them. We could just as easily declare these by setting them equal to <code>undefined</code>. There should be no difference, so pick a convention and stick with it.</p>
+
+<p>One last thing to note on the example above: we&rsquo;ve added some new types of assertions. Assertions are denoted by the <code>it</code> method, which takes a string and a method. The second argument of the <code>it</code> block should contain an assertion. These assertions are the heart of the spec. As stated above, this assertion is written using Chai as our assertion library for our foray into Angular testing. Chai offers a bevy of different, interesting, and, most importantly, descriptive ways to write assertions. In the above example, our first assertions ensure the <code>team</code> property is on <code>TeamService</code>, and in the second, we assert that it&rsquo;s not.</p>
+
+<h3>Angular</h3>
+
+<p>In order to more easily test our Angular code, the Angular team provides a mocking library, ngMock, a mocking library. ngMock has two very important methods: <code>module</code> and <code>inject</code>. <code>module</code> take a string and loads in the corresponding Angular module. <code>inject</code> takes functions that wrap injectable services and providers. Let&rsquo;s see them in action:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nx">describe</span> <span class="s">&#39;TeamService&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
+</span><span class='line'>  <span class="nv">TeamService = </span><span class="kc">null</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">beforeEach</span> <span class="nf">-&gt;</span>
+</span><span class='line'>    <span class="nx">module</span> <span class="s">&#39;core&#39;</span>
+</span><span class='line'>    <span class="nx">inject</span> <span class="nf">(_TeamService_) -&gt;</span>
+</span><span class='line'>      <span class="nv">TeamService = </span><span class="nx">_TeamService_</span>
+</span><span class='line'>      <span class="nx">TeamService</span><span class="p">.</span><span class="nx">emptyRoster</span><span class="p">()</span>
+</span><span class='line'>  <span class="nx">it</span> <span class="s">&#39;should have an empty list of players&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
+</span><span class='line'>    <span class="nx">expect</span><span class="p">(</span><span class="nx">TeamService</span><span class="p">.</span><span class="nx">players</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">eql</span> <span class="p">[]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The very first thing we do inside our root <code>beforeEach</code> block is load the module that the <code>TeamService</code> is on. As soon as its loaded, we can begin injecting any dependencies we need to call as a part of testing the <code>TeamService</code>. In this case, we inject the <code>TeamService</code>. One thing to note, is the underscore wrapping notation we use in injecting the service. The underscore-wrapped service resolves to the <code>TeamService</code>. This notation is helpful because it allows us to both inject the service in the <code>beforeEach</code> block and declare it in the root <code>describe</code> block.</p>
+
+<p>Once the services and providers needed for the spec are declared and injected, we can use them throughout our test. In this case, we confirm that after running <code>TeamService.emptyRoster()</code> the <code>TeamService</code> has an empty <code>players</code> array.</p>
+
+<h3>Summary</h3>
+
+<p>Mochai and Chai can be great building blocks to setting up JS and Angular specs. With the patterns above, we are just scratching the surface. In future posts, I&rsquo;ll explore more patterns for testing Angular Services, Controllers, Directives, and more. So check back soon!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Active Support Presence and the Single Line Method]]></title>
@@ -616,40 +715,6 @@ Yeah, I was pretty angst-y and heartbroken when I wrote all of those songs. And 
 <p>Speaking of Old School and Anchorman, the movies of the Frat Pack sound like a passage from the Bible.  Old School begat Anchorman and Wedding Crashers.  Anchorman begat Talladega Nights and The Forty-Year Old Virgin.  Virgin begat Knocked Up, ad nauseum.  There is no heirarchy, no mentorship in the cast of The Hangover.  Sure, Todd Phillips directed both The Hangover and Old School.  Yes, Zach Galifianakis steals the spotlight, and he&rsquo;s nothing more than a poor man&rsquo;s Will Ferrell.  Ed Helms simply doesn&rsquo;t have the star power his predecessor, Steve Carrell, has, and if Bradley Cooper is destined for any career in films, it&rsquo;s more Matthew McConaughey than Vince Vaughn.  The Hangover is Cooper&rsquo;s own Dazed and Confused, the best movie he&rsquo;ll put out, but Cooper can&rsquo;t even pull it off with the sort of iconic line that McConaughey pulled off.</p>
 
 <p>In a few years, what seemed like a highly memorable movie will fade from our memory like all those crazy nights that seemed so important the next day.  &ldquo;Remember that one time?&#8221;  &#8220;Oh yeah!&#8221;  In the end, there&rsquo;s nothing wrong with that.  A string of nights, or movies like this, and a cognizant memory is formed, friendships created and strengthened.  In the end, like any hangover, it will only fade with time.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Where Unexpected Matchups Happen]]></title>
-    <link href="http://danubilla.com/blog/sports/where-unexpected-matchups-happen.html"/>
-    <updated>2009-06-04T18:38:00-04:00</updated>
-    <id>http://danubilla.com/blog/sports/where-unexpected-matchups-happen</id>
-    <content type="html"><![CDATA[<p><img class="aligncenter" src="http://danubilla.com/images/www/kobe-howard.jpg" width="288" height="162" title="lakers-magic-tip 'Lakers Magic Tip'" ></p>
-
-<p>Let&rsquo;s face it.  It&rsquo;s time to put the puppets away.  Kobe Bryant and LeBron James will not be meeting in the 2009 NBA Finals.  For the casual fan, this might be a deal-breaker, but it shouldn&rsquo;t be.  The sub-plots run deep.  With a solid Finals, the rejuvenation of the NBA that first broke with the 2008-2009 could build up just enough momentum to carry the league through to the summer of 2010.  As P Diddy would say, &ldquo;<a href="http://twitter.com/iamdiddy/status/1977889928" target="_blank">Let&rsquo;s Go!!1!</a>&rdquo;</p>
-
-<!-- more -->
-
-
-<p><img class="'alignleft size-full wp-image-69'" src="http://danubilla.com/images/www/kobe-lebron-puppets.jpg" width="288" height="162" title="kobe-lebron 'Kobe and LeBron Puppets'" ></p>
-
-<p>Before we jump ahead to the positives of a Lakers/Magic Finals, let&rsquo;s quickly put our ghosts to rest on what was not meant to be.  A Cavaliers/Lakers match-up would have been an ABC executives&#8217; wet dream.  Nike already had their hands up the the teams&#8217; superstars&#8217; asses.  The average fans would have gathered at water coolers discussing the highlights they caught on SportsCenter in the morning.  Progress would have been made for all of four to seven games, and at the end of it, not one would be able to name more than three players on either team.</p>
-
-<p>The 2008 NBA Finals was special because it put a solid bookmark on the mid-00s era.  It&rsquo;s no stretch to say the Spurs and Pistons played a boring brand of basketball, one that wasn&rsquo;t good for the game itself or the legacy of the league.  With the Lakers and the Celtics came a storied history, a renewed rivalry.  This year gives us two teams with startling differences.  It shouldn&rsquo;t be hard for each non-affiliated fan to pick the team they want to root for.</p>
-
-<p><img class="alignright" src="http://danubilla.com/images/www/kobe-mean.jpg" width="300" height="168" title="kobe bryant mean mug scowl" alt="Kobe Mean Mugging"></p>
-
-<p>The Lakers represent the machine.  They are the Empire.  The venerable Coach Phil Jackson is aiming for what would be a record 10th Championship win, the vilified superstar still looking to get out of the shadow of a friend and teammate turned enemy, the right-hand-man, Pau Gasol, who plays the X factor in the post, and well-put together supporting cast that realize a loss this year could send any one of them packing.  Despite being from the fun-loving, sports-semi-caring city of LA, it&rsquo;s the Lakers who bring the scowl, the fight, the sheer desire to win.   This is not always a good thing.</p>
-
-<p>Rooting for the Lakers, in many ways, is rooting for history.  Years from now, the league will be better for Kobe having gotten his ring on his own.  Right now, Kobe has yet to win a championship as the best player on his own team.  How many other players whose greatness has been argued so vehemently has found themselves in the same position?  None.  Chances are, Bryant&rsquo;s not going to get his six to match Jordan, but with the way the game has changed over the past ten years, four would give the great debate a fantastic bit of legitimacy.</p>
-
-<p>The Magic are everything the Lakers are not.  Led by young, fresh, baby-faced Dwight Howard, the Magic seem to always be smiling and always hitting their jumpers.  After Howard at the 5 spot, any one of Orlando&rsquo;s 1-4 can hit a J from anywhere on the court.  It&rsquo;s this match-up problem that led to the Cavaliers early exit, and Orlando&rsquo;s fun-loving spirit unseated the King before he could take his throne.  It&rsquo;s the classic last cup in beer pong question: do you embrace the pressure and understand one good shot keeps you in the game, or do you pretend it&rsquo;s any other shot, aware that any pressure could ruin your flow.  The Lakers want to embrace the pressure.  I&rsquo;m not even sure the Magic know what the word means.</p>
-
-<p><img class="alignright" src="http://danubilla.com/images/www/shaq-superman.jpg" width="300" height="168" title="shaq superman" alt="Before Dwight Howard Became Superman"></p>
-
-<p>It&rsquo;s debatable how many Magic fans rode out the years since their last championship run, but the organization has given little for fans to talk about.  The original era of the Orlando Magic ended in the summer of 1996 when Shaquille O&#8217;Neal left the squad after just three years as the anchor of O-Town&rsquo;s post game.  You know where he left for: the bright lights and cameras of LA.  When Shaq inevitably makes it to Springfield, there&rsquo;ll no doubt be a Lakers jersey hanging by his name.  Any legitimate sports fan should still hold a grudge for Los Angeles.  While any signs making mention of the move would be more than just a little petty, that spite should still fill the crowd in Amway Arena.</p>
-
-<p>With a successful Finals, the NBA will build a smaller fanbase, but one that will last much longer than the alternative, seemingly destined match-up.  The LA market will pull it&rsquo;s share, but it will fans outside of Orlando to care about the team.  If any coming-of-age star can win people over, it&rsquo;s Dwight.  Now it&rsquo;s just a matter of getting those fans ready to be won over.</p>
 ]]></content>
   </entry>
   
