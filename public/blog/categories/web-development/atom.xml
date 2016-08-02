@@ -4,7 +4,7 @@
   <title><![CDATA[Category: web-development | Dan Ubilla]]></title>
   <link href="http://danubilla.com/blog/categories/web-development/atom.xml" rel="self"/>
   <link href="http://danubilla.com/"/>
-  <updated>2016-05-20T07:45:12-04:00</updated>
+  <updated>2016-08-01T22:41:55-04:00</updated>
   <id>http://danubilla.com/</id>
   <author>
     <name><![CDATA[Dan Ubilla]]></name>
@@ -12,6 +12,249 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Angular Testing: Services]]></title>
+    <link href="http://danubilla.com/blog/web-development/angular-testing-services.html"/>
+    <updated>2016-08-01T22:11:00-04:00</updated>
+    <id>http://danubilla.com/blog/web-development/angular-testing-services</id>
+    <content type="html"><![CDATA[<p><a href="https://angularjs.org/">Angular</a> <a href="https://docs.angularjs.org/guide/services">services</a> serve as a way for us to store data that will be shared through our various Angular components. Services act as a single-point of truth for our application&rsquo;s data, and as such they are often reused, sometimes heavily. Ensuring services are well-tested is a crucial part of maintaining a healthy Angular app.</p>
+
+<!-- more -->
+
+
+<p>Along with acting as a data store, Angular components are singletons, which make them great candidates for housing shared code. In particular, services are a great interface between the Angular app and the backend, so, hopefully, your services are using Angular&rsquo;s <code>$http</code> service to do this communication. Mocking out the response from <code>$http</code> will be necessary to testing many services.</p>
+
+<h3>Service Testing</h3>
+
+<p>Let&rsquo;s build our spec using the lessons we learned last time. We&rsquo;ll start with a <code>PlayerService</code>.</p>
+
+<p>``` coffeescript
+angular.module(&lsquo;core&rsquo;)
+.factory &lsquo;PlayerService&rsquo;, &ndash;></p>
+
+<p>  getTypes: &ndash;></p>
+
+<pre><code>['all', 'available']
+</code></pre>
+
+<p>```</p>
+
+<p>Here is our Player service. Note that we are using a factory under the hood. The differences between factories and services are minimal, so it&rsquo;s usually best to pick one for a project and stick with it throughout.</p>
+
+<p>``` coffeescript
+describe &lsquo;PlayerService&rsquo;, &ndash;>
+  PlayerService = null</p>
+
+<p>  beforeEach &ndash;></p>
+
+<pre><code>module 'core'
+inject (_PlayerService_) -&gt;
+  PlayerService = _PlayerService_
+</code></pre>
+
+<p>```</p>
+
+<p>And here&rsquo;s our spec for the Player service. Recalling a lesson from last time, we initialize the <code>PlayerService</code> at the top of the spec. In the <code>beforeEach</code> block, we initialize the <code>core</code> module, where our <code>PlayerService</code> lives. And then, because we intend on calling the service outside of this <code>beforeEach</code> block, we make sure we inject it using the underscore notation.</p>
+
+<p>Let&rsquo;s add a spec for the <code>#getTypes</code> method.</p>
+
+<p>``` coffeescript
+describe &lsquo;PlayerService&rsquo;, &ndash;>
+  PlayerService = null</p>
+
+<p>  beforeEach &ndash;></p>
+
+<pre><code>module 'core'
+inject (_PlayerService_) -&gt;
+  PlayerService = _PlayerService_
+</code></pre>
+
+<p>  describe &lsquo;#getTypes&rsquo;, &ndash;></p>
+
+<pre><code>it 'should return both types', -&gt;
+  expect(PlayerService.getTypes()).to.eql ['all', 'available']
+</code></pre>
+
+<p>```</p>
+
+<p>Not too bad. Services are perfect candidates for unit testing. Every public method in a service can and should have a corresponding test.</p>
+
+<p>In this instance, we don&rsquo;t need any further setup to test this method. We can make the call directly in the first argument of the <code>expect</code> call. Because the method returns an array, we need to use the <a href="http://www.chaijs.com">Chai</a> method <code>eql</code>. <code>eq</code> can be used for primitives; it checks for direct equality. <code>eql</code> iterates through the items being compared and checks for deep equality. For this reason, <code>eql</code> must be used for checking equality of objects and arrays.</p>
+
+<p>Now let&rsquo;s see an example where we need to test some more logic.</p>
+
+<p>``` coffeescript
+angular.module(&lsquo;core&rsquo;)
+.factory &lsquo;PlayerService&rsquo;, (currentUser) &ndash;></p>
+
+<p>  getTypes: &ndash;></p>
+
+<pre><code>if currentUser.isAdmin
+  ['all', 'available', 'pending']
+else
+  ['all', 'available']
+</code></pre>
+
+<p>```</p>
+
+<p>Now <code>#getTypes</code> checks on the value of an external service, <code>currentUser</code>, before returning a value. Let&rsquo;s see how to account for that external service and the extra conditional.</p>
+
+<p>``` coffeescript
+describe &lsquo;PlayerService&rsquo;, &ndash;>
+  PlayerService = currentUser = scope = null</p>
+
+<p>  beforeEach &ndash;></p>
+
+<pre><code>module 'core'
+inject (_PlayerService_, _currentUser_, $rootScope) -&gt;
+  PlayerService = _PlayerService_
+  currentUser = _currentUser_
+  scope = $rootScope.$new()
+</code></pre>
+
+<p>  describe &lsquo;#getTypes&rsquo;, &ndash;></p>
+
+<pre><code>describe 'current user is admin', -&gt;
+  beforeEach -&gt;
+    currentUser.isAdmin = true
+    scope.$digest()
+  it 'should return both types', -&gt;
+    expect(PlayerService.getTypes()).to.eql ['all', 'available', 'pending']
+describe 'current user is NOT an admin', -&gt;
+  beforeEach -&gt;
+    currentUser.isAdmin = false
+    scope.$digest()
+  it 'should return both types', -&gt;
+    expect(PlayerService.getTypes()).to.eql ['all', 'available']
+</code></pre>
+
+<p>```</p>
+
+<p>Alright, our spec has blown out a bit. We are injecting two more services. The first makes sense: we need to set values on <code>currentUser</code> to fully test out <code>#getTypes</code>. The second is a bit less intuitive: We inject <code>$rootScope</code> so we can create a scope for our test set up. We&rsquo;ll need this scope to run a digest cycle to update the state for our assertion.</p>
+
+<p>We still have a single describe block for our single function, but now, we test out both forks of the conditional in our <code>#getTypes</code> method. So, we need test set up for each block. We set <code>isAdmin</code> on the external service before each expectation. After any sort of test set up, we need to digest the scope to propagate the change. And our method is fully tested!</p>
+
+<h3>$http and $httpBackend</h3>
+
+<p>What will the service look like when we have an external service? We need to add the <code>$http</code> <a href="https://docs.angularjs.org/api/ng/service/$http">service</a> to make a server-side request.</p>
+
+<p>``` coffeescript
+angular.module(&lsquo;core&rsquo;)
+.factory &lsquo;PlayerService&rsquo;, ($http, $log) &ndash;></p>
+
+<p>  findAll: &ndash;></p>
+
+<pre><code>$http.get('/api/v1/players').then (response) -&gt;
+  response.data
+, (errors) -&gt;
+  $log(error) for error in errors
+</code></pre>
+
+<p>```</p>
+
+<p>In this example, we&rsquo;re making a GET request. The <code>get</code> functions makes that request and returns a promise. The first argument in that promise is run on a successful request; the second is run on an unsuccessful one.</p>
+
+<p>ngMock comes with <code>$httpBackend</code>: <a href="https://docs.angularjs.org/api/ngMock/service/$httpBackend">a mocked out</a> <code>$http</code> service. Before we take a look at any expectations, let&rsquo;s take a look at the test set up.</p>
+
+<p>``` coffeescript
+describe &lsquo;PlayerService&rsquo;, &ndash;>
+  PlayerService = currentUser = $httpBackend = null</p>
+
+<p>  beforeEach &ndash;></p>
+
+<pre><code>module 'core'
+inject (_PlayerService_, _$httpBackend_) -&gt;
+  PlayerService = _PlayerService_
+  $httpBackend = _$httpBackend_
+</code></pre>
+
+<p>  afterEach &ndash;></p>
+
+<pre><code>$httpBackend.verifyNoOutstandingExpectation()
+$httpBackend.verifyNoOutstandingRequest()
+</code></pre>
+
+<p>```</p>
+
+<p>We&rsquo;ll be using $httpBackend throughout the spec, so we start by initializing it at the top and injecting it with the underscore syntax. Then, we immediately set up an <code>afterEach</code> block. Calling <code>#verifyNoOutstandingExpectation</code> and <code>#verifyNoOutstandingRequest</code> ensures that the expectations set up are here are torn down correctly. Without these calls, it&rsquo;s possible that the tests here could step on subsequent tests and cause them to fail. These test failures can be hard to hunt down and fix, so tearing down the <code>$httpBackend</code> expectations are imperative.</p>
+
+<p>Let&rsquo;s look at a spec for the successful case next.</p>
+
+<p>``` coffeescript
+describe &lsquo;PlayerService&rsquo;, &ndash;>
+  PlayerService = currentUser = null</p>
+
+<p>  beforeEach &ndash;></p>
+
+<pre><code>module 'core'
+inject (_PlayerService_, _$httpBackend_) -&gt;
+  PlayerService = _PlayerService_
+  $httpBackend = _$httpBackend_
+</code></pre>
+
+<p>  afterEach &ndash;></p>
+
+<pre><code>$httpBackend.verifyNoOutstandingExpectation()
+$httpBackend.verifyNoOutstandingRequest()
+</code></pre>
+
+<p>  describe &lsquo;#findAll&rsquo;, &ndash;></p>
+
+<pre><code>describe 'successful', -&gt;
+  beforeEach -&gt;
+    $httpBackend.expectGET('/api/v1/players')
+    PlayerService.findAll()
+  it 'should return both types', -&gt;
+    $httpBackend.flush()
+</code></pre>
+
+<p>```</p>
+
+<p>Let&rsquo;s walk through this one line by line starting with the test set up for <code>#findAll</code>. We start by calling <code>$httpBackend.expectGET</code> which sets up an expectation that the url passed in will be called. Next, we make the call to the method we are testing. Finally, in the <code>it</code> block, we call <code>flush</code>. This resolves all <code>$http</code> calls. With this flush, all of our expectations are met, and the test passes.</p>
+
+<p>And our spec testing errors:</p>
+
+<p>``` coffeescript
+describe &lsquo;PlayerService&rsquo;, &ndash;>
+  PlayerService = currentUser = $log = null</p>
+
+<p>  beforeEach &ndash;></p>
+
+<pre><code>module 'core'
+inject (_PlayerService_, _$httpBackend_, _$log_) -&gt;
+  PlayerService = _PlayerService_
+  $httpBackend = _$httpBackend_
+  $log = _$log_
+</code></pre>
+
+<p>  describe &lsquo;#findAll&rsquo;, &ndash;></p>
+
+<pre><code>describe 'successful', -&gt;
+  beforeEach -&gt;
+    $httpBackend.expectGET('/api/v1/players')
+    PlayerService.findAll()
+  it 'should return both types', -&gt;
+    $httpBackend.flush()
+describe 'error', -&gt;
+  beforeEach -&gt;
+    $httpBackend.whenGET('/api/v1/players').respond 422,
+      ['Error']
+    PlayerService.findAll()
+    $httpBackend.flush()
+  it 'should return both types', -&gt;
+    expect($log.debug.logs).to.eql ['Error']
+</code></pre>
+
+<p>```</p>
+
+<p><code>$httpBackend</code> has two different flavors of mocks. We saw the first in the success case: expect. The <code>expect</code> methods stub out requests that need to be called for the test to pass. In the error case we see the other flavor: when. The <code>when</code> methods are more forgiving. These requests don&rsquo;t need to be called, but when we flush out the <code>$http</code> service, we can set up the responses that will be returned. In fact, we&rsquo;ll get a &ldquo;No pending requests to flush&rdquo; error if we try to flush our requests that have not yet been set up. In this instance, we want to mock out an error, so we tell the service to return a 422 when it&rsquo;s flushed out. The second argument is the data response itself. The <code>$log</code> service holds the logs in the <code>debug</code> object which is set up perfectly for testing.</p>
+
+<h3>Summary</h3>
+
+<p>Services are shared components that can be used throughout your application. Because so much of your application depends on them, services should be tested thoroughly. If you are communicating with a server, you should be setting up those HTTP calls with Angular&rsquo;s <code>$http</code> service. <code>$httpBackend</code> is set up to mock out these backend responses. Hopefully, these patterns and tips should give you a strong foundation for keeping all of your service tests strong.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[An Introduction to Angular Testing]]></title>
@@ -284,36 +527,6 @@ end
 </code></p>
 
 <p>h/t to <a href="http://stackoverflow.com/questions/7542774/undefined-method-stringify-keys-when-calling-update-attributes">Stack Overflow</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Creating a New Post for Octopress from Zsh]]></title>
-    <link href="http://danubilla.com/blog/web-development/creating-a-new-post-for-octopress-from-zsh.html"/>
-    <updated>2014-01-31T00:17:00-05:00</updated>
-    <id>http://danubilla.com/blog/web-development/creating-a-new-post-for-octopress-from-zsh</id>
-    <content type="html"><![CDATA[<p>A couple of years back, I made the switch from bash to zsh. I did so mainly because I saw <a href="" title="http://code.tutsplus.com/tutorials/how-to-customize-your-command-prompt--net-24083&quot;, &quot;Customizing Your Command Prompt on Nettuts">a fantastic post</a> on customizing the command prompt that I dove into head first, and I&rsquo;ve stuck with it for the slightly improved tab completion. Your mileage may vary with regards to zsh, but I always find it difficult to do without it when I end up working on somebody else&rsquo;s machine. Despite the improvement, there are a few differences between the shells, and I&rsquo;ve come across a scipt or two that wasn&rsquo;t especially zsh friendly. One of those is the very rake task that created this blog post.</p>
-
-<!-- more -->
-
-
-<p>To create a post in Octopress from bash, you simply need to run the command:</p>
-
-<blockquote><p>rake new_post[&ldquo;One man forgot to account for zsh&hellip;&rdquo;]</p></blockquote>
-
-<p>Running the same command from zsh leaves you with a cryptic error:</p>
-
-<blockquote><p>zsh: no matches found: new_post[One man forgot to account for zsh&hellip;]</p></blockquote>
-
-<p>Zsh escapes the quotes necessary to name the new blog post, as you can see by the error that is output. The syntax that creates a blog post in bash causes zsh to begin attempting to match a filename.</p>
-
-<p>To create a post in Octopress from zsh, you simply need to run the command:</p>
-
-<blockquote><p>rake &ldquo;new_post[One man forgot to account for zsh&hellip;]&rdquo;</p></blockquote>
-
-<p>It&rsquo;s a minor inconvenience, and one that could probably be solved by some extended documentation on the Octopress site. No harm, no foul; zsh Octopress bloggers just need to remember the change in syntax.</p>
-
-<p>Any other zsh tips for Octopress? Or any noteworthy zsh &ldquo;workarounds&rdquo; to share? Drop them in comments.</p>
 ]]></content>
   </entry>
   
