@@ -18,5 +18,5 @@ group :development do
   gem 'liquid', '~> 2.3.0'
 end
 
-gem 'sinatra', '~> 1.4.2'
+gem 'sinatra', '~> 1.4'
 gem 'newrelic_rpm'
