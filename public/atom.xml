@@ -4,7 +4,7 @@
   <title><![CDATA[Dan Ubilla]]></title>
   <link href="http://danubilla.com/atom.xml" rel="self"/>
   <link href="http://danubilla.com/"/>
-  <updated>2016-08-02T23:13:17-04:00</updated>
+  <updated>2017-12-05T21:46:24-05:00</updated>
   <id>http://danubilla.com/</id>
   <author>
     <name><![CDATA[Dan Ubilla]]></name>
@@ -425,7 +425,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>The very first thing we do inside our root <code>beforeEach</code> block is load the module that the <code>TeamService</code> is on. As soon as its loaded, we can begin injecting any dependencies we need to call as a part of testing the <code>TeamService</code>. In this case, we inject the <code>TeamService</code>. One thing to note is the underscore wrapping notation we use to inject the service. If we were to inject <code>TeamService</code>, we would not be able to reference the service in any subsequent <code>describe</code> or <code>it</code> blocks without declaring it in a parent scope. If we declare it at the top as <code>TeamService</code> however, then, we won&rsquo;t be able to inject <code>TeamService</code>. In order to handle this, Angular mocks provide us with an underscore-wrapped version of every service which resolves to that service itself. Injecting <code>_TeamService_</code> and setting it to the <code>TeamService</code> declared above, will then allow us to use <code>TeamService</code> throughout the spec. As a rule of thumb, if you only need to use a service inside the top-level <code>describe</code> block, you can use the standard service injection syntax; if you will need to call that service in subsequent blocks of the spec, you should use the underscore notation syntax for injection.</p>
+<p>The very first thing we do inside our root <code>beforeEach</code> block is load the module that the <code>TeamService</code> is on. As soon as its loaded, we can begin injecting any dependencies we need to call as a part of testing the <code>TeamService</code>. In this case, we inject the <code>TeamService</code>. One thing to note is the underscore wrapping notation we use to inject the service. If we were to inject <code>TeamService</code>, we would not be able to reference the service in any subsequent <code>describe</code> or <code>it</code> blocks without declaring it in a parent scope. If we declare it at the top as <code>TeamService</code> however, then, we won&rsquo;t be able to inject <code>TeamService</code>. In order to handle this, Angular mocks provide us with an underscore-wrapped version of every service which resolves to that service itself. Injecting <code>_TeamService_</code> and setting it to the <code>TeamService</code> declared above, will then allow us to use <code>TeamService</code> throughout the spec. As a rule of thumb, if you only need to use a service inside the top-level <code>describe</code> block, you can use the standard service injection syntax; if you will need to call that service in subsequent blocks of the spec, you should use the underscore syntax for injection.</p>
 
 <p>Once the services and providers needed for the spec are declared and injected, we can use them throughout our test. In this case, we confirm that after running <code>TeamService.emptyRoster()</code> the <code>TeamService</code> has an empty <code>players</code> array.</p>
 
