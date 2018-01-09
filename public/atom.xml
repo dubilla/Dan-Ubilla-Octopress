@@ -4,7 +4,7 @@
   <title><![CDATA[Dan Ubilla]]></title>
   <link href="http://danubilla.com/atom.xml" rel="self"/>
   <link href="http://danubilla.com/"/>
-  <updated>2017-12-05T22:18:39-05:00</updated>
+  <updated>2018-01-08T21:28:17-05:00</updated>
   <id>http://danubilla.com/</id>
   <author>
     <name><![CDATA[Dan Ubilla]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[What Are Your Signals?]]></title>
+    <link href="http://danubilla.com/blog/management/what-are-your-signals.html"/>
+    <updated>2018-01-08T20:42:00-05:00</updated>
+    <id>http://danubilla.com/blog/management/what-are-your-signals</id>
+    <content type="html"><![CDATA[<p>I was recently in a one-on-one with a tech lead when we began talking about how his team was doing. His team had recently added one member and lost another, so the chemistry of the team was a topic that was on our minds. He mentioned how he felt the team was coming together, and I found myself asking a question that I’ve been reaching for a lot lately: “What are your signals?”</p>
+
+<!-- more -->
+
+
+<blockquote><p> What Are Your Signals?</p></blockquote>
+
+<p>I find myself asking the question time and again because I find that the question opens up the conversation in so many ways. At its surface, it allows us to get to a deeper level. It anchors the conversation in a sentiment, which is great for a one-on-one, and begins to explore what is causing the feeling. By asking for the signals, I also want the person I manage to know that I’m there with them. I’m agreeing, for now at least, that the team is coming together, and now I want to talk about what’s driving him to that conclusion.</p>
+
+<p>The question also allows me to find out if my report and I are looking at the same things. If the engineer is looking at something I don’t want or think our team should value, it’s a great chance to coach them away from that signal. If I feel the signal is particularly valuable, I have the opportunity to give positive reinforcement. Often, the conversation will lead to us exchanging signals with each of us growing our own set of tells.</p>
+
+<p>Lastly, with any question I regularly ask in a one-on-one, I’m hoping to establish a pattern. If I ask an engineer what signals she has for a particular feeling or sentiment, I hope they continue to ask themselves the same question the next time they have a gut feeling. The more solid that engineer feels in the “why” behind their feeling, the faster we get to talk about that in our own one-on-one.</p>
+
+<p>“What are your signals?” is a question you can ask regardless of whether the feeling is a positive or negative one. I’ve found myself asking it in a number of scenarios recently.
+* “The team doesn’t seem excited lately.”
+* “I think our new member is really hitting their stride.”
+* “Things feel more stressful lately.”</p>
+
+<p>Keep the question in your backpocket. Bring it out the next time you want to go deeper in a one-on-one. Enjoy your conversation, and I hope you get to learn something new!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Angular Testing: Services]]></title>
@@ -995,19 +1022,6 @@ Yeah, I was pretty angst-y and heartbroken when I wrote all of those songs. And 
     <content type="html"><![CDATA[<p>Implementing cURL in an XAMPP environment for the first time can cause a quick, early headache.  The most common error seen is a simple curl_init() can not be found.  Luckily, the solution is most likely simple.   cURL comes included with Apache but not installed, so you have to go in and turn it on yourself.</p>
 
 <p>Open up your php.ini located under the /php directory.  The line that needs editing will read: ;extension=php_curl.dll.  Simply remove the semi-colon to uncomment the line.  Then restart Apache to finish the change!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Going Back]]></title>
-    <link href="http://danubilla.com/blog/ramblings/going-back.html"/>
-    <updated>2009-07-26T16:08:00-04:00</updated>
-    <id>http://danubilla.com/blog/ramblings/going-back</id>
-    <content type="html"><![CDATA[<p><img class="aligncenter size-full wp-image-96" src="http://danubilla.com/images/www/shedeservesit.jpg" width="400" height="268" title="She Deserves It" alt="She Deserves It"></p>
-
-<p>The ambiguity of the narrator on this Post Secret really struck a chord.  The possibilities of all three roles are endless and striking.  Why did the male lead leave?  What is the female lead doing in the meanwhile?  We do know the male character is coming back; it&rsquo;s simply a matter of when.  How is the narrator related to either of the main characters?  And what to make of the starry, dreamy night sky backdrop?</p>
-
-<p>It works because the reader has enough information to create their own version of the story.  What&rsquo;s your version?</p>
 ]]></content>
   </entry>
   
