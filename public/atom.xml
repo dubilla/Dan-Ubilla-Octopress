@@ -4,7 +4,7 @@
   <title><![CDATA[Dan Ubilla]]></title>
   <link href="http://danubilla.com/atom.xml" rel="self"/>
   <link href="http://danubilla.com/"/>
-  <updated>2018-01-08T21:33:35-05:00</updated>
+  <updated>2018-02-03T17:16:37-05:00</updated>
   <id>http://danubilla.com/</id>
   <author>
     <name><![CDATA[Dan Ubilla]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Three Takeaways from Scaling 101]]></title>
+    <link href="http://danubilla.com/blog/management/three-takeaways-from-scaling-101.html"/>
+    <updated>2018-02-03T16:55:00-05:00</updated>
+    <id>http://danubilla.com/blog/management/three-takeaways-from-scaling-101</id>
+    <content type="html"><![CDATA[<p>A few weeks ago, I had the chance to catch For the Win’s panel on scaling teams. <a href="https://generalassemb.ly/education/scaling-101-how-to-grow-your-team-without-losing-your-culture/new-york-city">Scaling 101: How to Grow Your Team Without Losing Your Culture</a> was a panel consisting of leaders from engineering, HR, and recruiting discussing lessons learned from scaling teams at Meetup, Managed by Q, and others. The panel covered recruiting, interviewing, and onboarding in a tight hour. Here are the three lessons I took away from the panel.</p>
+
+<!-- more -->
+
+
+<h3>Convert and Converge Two Narratives</h3>
+
+<p>When you are recruiting and building out your team, the team and the candidate are each interviewing the other. Each has an arc, a trajectory, of where they’ve been and where they want to go. As an organization, you need to be able to understand where the candidate sees their path leading them. You need to validate that the path the candidate sees for themselves is possible on your team. And then you need to do the reverse. Does the candidate’s path match the teams’ needs? Does it match the teams’ capacity?</p>
+
+<blockquote><p>Convert and converge two narratives. Theirs and yours. And you need to do that better than everybody else.</p></blockquote>
+
+<p>The good organizations are doing this work. And if the candidate you’re interviewing is also interviewing with other solid organizations, than you need to be converging these narratives better than your competition.</p>
+
+<h3>Onboarding Starts with the First Interview</h3>
+
+<p>It’s common to feel like recruiting a candidate and onboarding a new teammate are two steps that are done in serial. Instead, it’s best to reframe onboarding as a process that envelops recruiting. As you first get on the phone or meet up with a candidate, you are starting the story of them as a part of your team.</p>
+
+<blockquote><p>Onboarding starts with the interview process. They should know what their life will look like.</p></blockquote>
+
+<p>You should start to have an idea of what the employee’s first days, weeks, and months will look like after that first call. You’ll spend the rest of the interview process shaping that up. By the time of the offer, the candidate should know exactly what they’re signing up for. A 30/60/90 plan can be a great way to communicate what their life on your team will look like.</p>
+
+<h3>Try and Scare the Candidate Away</h3>
+
+<p>We’ve all been in a situation before where a candidate asks a tough question. We hem and we haw, and our instinct is to sugarcoat the answer. The panel didn’t just suggest shooting straight; they suggested airing your dirty laundry in the interview process.</p>
+
+<blockquote><p>Be as transparent with the situation as possible in the interview process. Try and scare them away early because they’ll figure it out on day one.</p></blockquote>
+
+<p>Let the candidates know the issues you’ve been having. You might be bringing the candidate on board to solve some of those problems. And for the many other problems that exist, and will continue to exist, the candidate will find out sooner or later. Being outrageously frank during the interview process will only save everybody’s time.</p>
+
+<hr />
+
+<p>Big thanks to <a href="https://twitter.com/ftwnyc">FTW</a>, <a href="https://generalassemb.ly/">General Assembly</a>, the host, <a href="https://twitter.com/benjaminjackson">Benjamin Jackson</a>, and the panelists — <a href="https://www.instagram.com/dinasays/">Dina Friedel</a>, <a href="https://generalassemb.ly/instructors/amy-wolf-forrester/15648">Amy Wolf Forrester</a>, <a href="https://twitter.com/danmanian">Dan Manian</a>, and <a href="https://generalassemb.ly/instructors/jonathan-basker/15605">Jonathan Basker</a> —  for the event, and apologies for not taking down the proper individual attributions for the takeaways above.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[What Are Your Signals?]]></title>
@@ -364,105 +404,6 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[An Introduction to Angular Testing]]></title>
-    <link href="http://danubilla.com/blog/web-development/angular-testing-by-component.html"/>
-    <updated>2016-05-17T13:46:00-04:00</updated>
-    <id>http://danubilla.com/blog/web-development/angular-testing-by-component</id>
-    <content type="html"><![CDATA[<p><a href="https://angularjs.org/">AngularJS</a> is designed to be as testable as possible. With its use of dependency injection, creating and manipulating mocks to test out individual components of your Angular application can be done in a stable, reliable way. Testing out each Angular component, however, comes with its own set of patterns to apply. Some of these patterns are similar cross-component, and using and understanding these core concepts of Angular testing can act as a nice bootstrap to your testing process.</p>
-
-<!-- more -->
-
-
-<p>There are a number of tools that can be combined to create an Angular framework. For these purposes, I&rsquo;ll be using <a href="http://coffeescript.org/">CoffeeScript</a> as a JavaScript precompiler, <a href="https://karma-runner.github.io/">Karma</a> as a test runner, <a href="https://mochajs.org/">Mocha</a> as a testing library, and <a href="http://chaijs.com/">Chai</a>, with expect syntax, as an assertion library. Before we take a look at testing Angular components, let&rsquo;s start by getting a closer look at our testing and assertion libraries.</p>
-
-<h3>Mocha and Chai</h3>
-
-<p>Let&rsquo;s start by taking a look at a very pared down of an AngularJS test, and we&rsquo;ll build on it over the course of this post.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nx">describe</span> <span class="s">&#39;TeamService&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
-</span><span class='line'>  <span class="nx">describe</span> <span class="s">&#39;exists&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
-</span><span class='line'>    <span class="p">...</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>If you&rsquo;ve used a test framework like RSpec or Minitest for Ruby before, the structure should look familiar. Mocha, and Jasmine, organize test assertions inside <code>describe</code> blocks. <code>describe</code> methods take two arguments: a string that should act as a human readable description for the state that follows, and a method that will contain a mix of assertions and more <code>describe</code> methods. These <code>describe</code> blocks do two things: they group specs together to help create a readable assertion and they provide a place to set up mocks for each assertion.</p>
-
-<p>Let&rsquo;s see how we can use describe blocks to set up different test scenarios using Mocha&rsquo;s beforeEach method.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nx">describe</span> <span class="s">&#39;TeamService&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
-</span><span class='line'>  <span class="nv">TeamService = </span><span class="kc">null</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="nx">describe</span> <span class="s">&#39;when a team is passed in&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
-</span><span class='line'>    <span class="nx">beforeEach</span> <span class="nf">-&gt;</span>
-</span><span class='line'>      <span class="nv">TeamService.team =</span>
-</span><span class='line'>        <span class="nv">id: </span><span class="mi">1</span>
-</span><span class='line'>    <span class="nx">it</span> <span class="s">&#39;should should have a team&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
-</span><span class='line'>      <span class="nx">expect</span><span class="p">(</span><span class="nx">TeamService</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">have</span><span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="s">&#39;team&#39;</span><span class="p">)</span>
-</span><span class='line'>  <span class="nx">describe</span> <span class="s">&#39;when a team is not passed in&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
-</span><span class='line'>    <span class="nx">it</span> <span class="s">&#39;should not have a team&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
-</span><span class='line'>      <span class="nx">expect</span><span class="p">(</span><span class="nx">TeamService</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="o">not</span><span class="p">.</span><span class="nx">have</span><span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="s">&#39;team&#39;</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>There&rsquo;s a lot going on above, so let&rsquo;s take it one thing at a time. Let&rsquo;s focus on the <code>beforeEach</code> method added above. By organizing our Angular specs into <code>describe</code> blocks that connote state, we&rsquo;re able to set up test data inside of the <code>beforeEach</code> method. <code>beforeEach</code> takes one argument: a method that will be executed before assertions are run. In fact, we&rsquo;re able to continue to nest <code>describe</code> blocks with their own <code>beforeEach</code> method, and we can be confident that they will run in order before each assertion is run. This allows us to construct specs that build state on themselves which should lead to readable, DRY tests. In the above example we describe two different states, and we&rsquo;re able to set up each using <code>beforeEach</code>.</p>
-
-<p>In order to access these variables across various <code>describe</code> blocks, we declare these variables inside the outermost <code>describe</code> block. We set our CoffeeScript variables equal to <code>null</code> as a way of declaring them. We could just as easily declare these by setting them equal to <code>undefined</code>. There should be no difference, so pick a convention and stick with it.</p>
-
-<p>One last thing to note on the example above: we&rsquo;ve added some new types of assertions. Assertions are denoted by the <code>it</code> method, which takes a string and a method. The second argument of the <code>it</code> block should contain an assertion. These assertions are the heart of the spec. As stated above, this assertion is written using Chai as our assertion library for our foray into Angular testing. Chai offers a bevy of different, interesting, and, most importantly, descriptive ways to write assertions. In the above example, our first assertions ensure the <code>team</code> property is on <code>TeamService</code>, and in the second, we assert that it&rsquo;s not.</p>
-
-<h3>Angular</h3>
-
-<p>In order to more easily test our Angular code, the Angular team provides a mocking library, ngMock, a mocking library. ngMock has two very important methods: <code>module</code> and <code>inject</code>. <code>module</code> take a string and loads in the corresponding Angular module. <code>inject</code> takes functions that wrap injectable services and providers. Let&rsquo;s see them in action:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nx">describe</span> <span class="s">&#39;TeamService&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
-</span><span class='line'>  <span class="nv">TeamService = </span><span class="kc">null</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="nx">beforeEach</span> <span class="nf">-&gt;</span>
-</span><span class='line'>    <span class="nx">module</span> <span class="s">&#39;core&#39;</span>
-</span><span class='line'>    <span class="nx">inject</span> <span class="nf">(_TeamService_) -&gt;</span>
-</span><span class='line'>      <span class="nv">TeamService = </span><span class="nx">_TeamService_</span>
-</span><span class='line'>      <span class="nx">TeamService</span><span class="p">.</span><span class="nx">emptyRoster</span><span class="p">()</span>
-</span><span class='line'>  <span class="nx">it</span> <span class="s">&#39;should have an empty list of players&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
-</span><span class='line'>    <span class="nx">expect</span><span class="p">(</span><span class="nx">TeamService</span><span class="p">.</span><span class="nx">players</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">eql</span> <span class="p">[]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The very first thing we do inside our root <code>beforeEach</code> block is load the module that the <code>TeamService</code> is on. As soon as its loaded, we can begin injecting any dependencies we need to call as a part of testing the <code>TeamService</code>. In this case, we inject the <code>TeamService</code>. One thing to note is the underscore wrapping notation we use to inject the service. If we were to inject <code>TeamService</code>, we would not be able to reference the service in any subsequent <code>describe</code> or <code>it</code> blocks without declaring it in a parent scope. If we declare it at the top as <code>TeamService</code> however, then, we won&rsquo;t be able to inject <code>TeamService</code>. In order to handle this, Angular mocks provide us with an underscore-wrapped version of every service which resolves to that service itself. Injecting <code>_TeamService_</code> and setting it to the <code>TeamService</code> declared above, will then allow us to use <code>TeamService</code> throughout the spec. As a rule of thumb, if you only need to use a service inside the top-level <code>describe</code> block, you can use the standard service injection syntax; if you will need to call that service in subsequent blocks of the spec, you should use the underscore syntax for injection.</p>
-
-<p>Once the services and providers needed for the spec are declared and injected, we can use them throughout our test. In this case, we confirm that after running <code>TeamService.emptyRoster()</code> the <code>TeamService</code> has an empty <code>players</code> array.</p>
-
-<h3>Summary</h3>
-
-<p>Mochai and Chai can be great building blocks to setting up JS and Angular specs. With the patterns above, we are just scratching the surface. In future posts, I&rsquo;ll explore more patterns for testing Angular Services, Controllers, Directives, and more. So check back soon!</p>
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[Active Support Presence and the Single Line Method]]></title>
     <link href="http://danubilla.com/blog/web-development/activesupport-presence.html"/>
     <updated>2016-02-14T15:00:00-05:00</updated>
@@ -726,27 +667,6 @@
 <p>All in all, I could not be more pleased with the single-page web app tools I&rsquo;ve discovered and workflow I&rsquo;ve cultivated. Now that I have the workflow in place, I&rsquo;m already looking to the next side project, FoursightSquare, to see just how quickly I can spin up a web app, start iterating on it, and deploy quickly with each iteration. You can follow along in the meanwhile on its Github page.</p>
 
 <p>It&rsquo;s important to note that MaxWell is a proof of concept with hard-coded values. Given an API, this web app could exist in its current form, or, in an API&rsquo;s absence, this app could be pushed to ESPN&rsquo;s servers and hooked up with just a little bit of server-side code.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Pushing Your Octopress Blog to Github]]></title>
-    <link href="http://danubilla.com/blog/web-development/pushing-your-octopress-blog-to-github.html"/>
-    <updated>2013-08-25T14:12:00-04:00</updated>
-    <id>http://danubilla.com/blog/web-development/pushing-your-octopress-blog-to-github</id>
-    <content type="html"><![CDATA[<p>I have just gotten started using the Octopress framework for blogging, and I love it. The setup process is unbelievably well-documented, and if you&rsquo;re familiar with Git and Ruby projects, you&rsquo;ll pick it up fairly quickly. The only issue I had early on was pushing my new blog up to Github for version control. It&rsquo;s a little tricky since the first step is cloning from Brandon Mathis&#8217; Octopress repo, but the fix is relatively simple.</p>
-
-<!-- more -->
-
-
-<p>Once you&rsquo;ve clone the Octopress project, thrown up a few posts, and tidied up any configuration you want, you&rsquo;re going to want to get the repo into version control using Git. If you&rsquo;re like me, you&rsquo;re also going to want to push it up to Github. I was surprised upon first trying to do this, that my repo was already set up with a remote named origin. Of course, it was; I had cloned from the Octopress repo. I went ahead and pulled a quick switcheroo before add the remote Github origin.</p>
-
-<blockquote><p>git rename remote clone
-git add remote origin [github url]</p></blockquote>
-
-<p>It feels a little hacky, but it got the trick done.</p>
-
-<p>Pretty fitting that I&rsquo;m writing about using Octopress as my first post written on the service, huh?</p>
 ]]></content>
   </entry>
   
@@ -1022,6 +942,19 @@ Yeah, I was pretty angst-y and heartbroken when I wrote all of those songs. And 
     <content type="html"><![CDATA[<p>Implementing cURL in an XAMPP environment for the first time can cause a quick, early headache.  The most common error seen is a simple curl_init() can not be found.  Luckily, the solution is most likely simple.   cURL comes included with Apache but not installed, so you have to go in and turn it on yourself.</p>
 
 <p>Open up your php.ini located under the /php directory.  The line that needs editing will read: ;extension=php_curl.dll.  Simply remove the semi-colon to uncomment the line.  Then restart Apache to finish the change!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Going Back]]></title>
+    <link href="http://danubilla.com/blog/ramblings/going-back.html"/>
+    <updated>2009-07-26T16:08:00-04:00</updated>
+    <id>http://danubilla.com/blog/ramblings/going-back</id>
+    <content type="html"><![CDATA[<p><img class="aligncenter size-full wp-image-96" src="http://danubilla.com/images/www/shedeservesit.jpg" width="400" height="268" title="She Deserves It" alt="She Deserves It"></p>
+
+<p>The ambiguity of the narrator on this Post Secret really struck a chord.  The possibilities of all three roles are endless and striking.  Why did the male lead leave?  What is the female lead doing in the meanwhile?  We do know the male character is coming back; it&rsquo;s simply a matter of when.  How is the narrator related to either of the main characters?  And what to make of the starry, dreamy night sky backdrop?</p>
+
+<p>It works because the reader has enough information to create their own version of the story.  What&rsquo;s your version?</p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: management | Dan Ubilla]]></title>
   <link href="http://danubilla.com/blog/categories/management/atom.xml" rel="self"/>
   <link href="http://danubilla.com/"/>
-  <updated>2018-01-08T21:33:37-05:00</updated>
+  <updated>2018-02-03T17:16:37-05:00</updated>
   <id>http://danubilla.com/</id>
   <author>
     <name><![CDATA[Dan Ubilla]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Three Takeaways from Scaling 101]]></title>
+    <link href="http://danubilla.com/blog/management/three-takeaways-from-scaling-101.html"/>
+    <updated>2018-02-03T16:55:00-05:00</updated>
+    <id>http://danubilla.com/blog/management/three-takeaways-from-scaling-101</id>
+    <content type="html"><![CDATA[<p>A few weeks ago, I had the chance to catch For the Win’s panel on scaling teams. <a href="https://generalassemb.ly/education/scaling-101-how-to-grow-your-team-without-losing-your-culture/new-york-city">Scaling 101: How to Grow Your Team Without Losing Your Culture</a> was a panel consisting of leaders from engineering, HR, and recruiting discussing lessons learned from scaling teams at Meetup, Managed by Q, and others. The panel covered recruiting, interviewing, and onboarding in a tight hour. Here are the three lessons I took away from the panel.</p>
+
+<!-- more -->
+
+
+<h3>Convert and Converge Two Narratives</h3>
+
+<p>When you are recruiting and building out your team, the team and the candidate are each interviewing the other. Each has an arc, a trajectory, of where they’ve been and where they want to go. As an organization, you need to be able to understand where the candidate sees their path leading them. You need to validate that the path the candidate sees for themselves is possible on your team. And then you need to do the reverse. Does the candidate’s path match the teams’ needs? Does it match the teams’ capacity?</p>
+
+<blockquote><p>Convert and converge two narratives. Theirs and yours. And you need to do that better than everybody else.</p></blockquote>
+
+<p>The good organizations are doing this work. And if the candidate you’re interviewing is also interviewing with other solid organizations, than you need to be converging these narratives better than your competition.</p>
+
+<h3>Onboarding Starts with the First Interview</h3>
+
+<p>It’s common to feel like recruiting a candidate and onboarding a new teammate are two steps that are done in serial. Instead, it’s best to reframe onboarding as a process that envelops recruiting. As you first get on the phone or meet up with a candidate, you are starting the story of them as a part of your team.</p>
+
+<blockquote><p>Onboarding starts with the interview process. They should know what their life will look like.</p></blockquote>
+
+<p>You should start to have an idea of what the employee’s first days, weeks, and months will look like after that first call. You’ll spend the rest of the interview process shaping that up. By the time of the offer, the candidate should know exactly what they’re signing up for. A 30/60/90 plan can be a great way to communicate what their life on your team will look like.</p>
+
+<h3>Try and Scare the Candidate Away</h3>
+
+<p>We’ve all been in a situation before where a candidate asks a tough question. We hem and we haw, and our instinct is to sugarcoat the answer. The panel didn’t just suggest shooting straight; they suggested airing your dirty laundry in the interview process.</p>
+
+<blockquote><p>Be as transparent with the situation as possible in the interview process. Try and scare them away early because they’ll figure it out on day one.</p></blockquote>
+
+<p>Let the candidates know the issues you’ve been having. You might be bringing the candidate on board to solve some of those problems. And for the many other problems that exist, and will continue to exist, the candidate will find out sooner or later. Being outrageously frank during the interview process will only save everybody’s time.</p>
+
+<hr />
+
+<p>Big thanks to <a href="https://twitter.com/ftwnyc">FTW</a>, <a href="https://generalassemb.ly/">General Assembly</a>, the host, <a href="https://twitter.com/benjaminjackson">Benjamin Jackson</a>, and the panelists — <a href="https://www.instagram.com/dinasays/">Dina Friedel</a>, <a href="https://generalassemb.ly/instructors/amy-wolf-forrester/15648">Amy Wolf Forrester</a>, <a href="https://twitter.com/danmanian">Dan Manian</a>, and <a href="https://generalassemb.ly/instructors/jonathan-basker/15605">Jonathan Basker</a> —  for the event, and apologies for not taking down the proper individual attributions for the takeaways above.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[What Are Your Signals?]]></title>
