@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>The Importance of bind() in jQuery - Dan Ubilla</title>
+  <title>Pushing Your Octopress Blog to Github - Dan Ubilla</title>
   <meta name="author" content="Dan Ubilla">
 
   
-  <meta name="description" content="The jQuery library has always been held in high appeal for its gradual learning curve and generally quick implementation. The API is concise and &hellip;">
+  <meta name="description" content="I have just gotten started using the Octopress framework for blogging, and I love it. The setup process is unbelievably well-documented, and if you& &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://danubilla.com/blog/web-development/the-importance-of-bind-in-jquery.html">
+  <link rel="canonical" href="http://danubilla.com/blog/web-development/pushing-your-octopress-blog-to-github.html">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Dan Ubilla" type="application/atom+xml">
@@ -83,7 +83,7 @@
   
   <header>
     
-      <h1 class="entry-title">The Importance of Bind() in jQuery</h1>
+      <h1 class="entry-title">Pushing Your Octopress Blog to Github</h1>
     
     
       <p class="meta">
@@ -99,21 +99,26 @@
   
 
 
-<time datetime="2010-05-17T12:00:00-04:00" pubdate data-updated="true">May 17<span>th</span>, 2010</time>
+<time datetime="2013-08-25T14:12:00-04:00" pubdate data-updated="true">Aug 25<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>The jQuery library has always been held in high appeal for its gradual learning curve and generally quick implementation.  The API is concise and includes such simple event watching nomenclature as show(), hide(), ready(), submit(), focus(), and more.  The one popular event watcher that I kept seeing popping up in script after script was the generic bind() function.  I never fully understood what made implementing the bind function any more desirable than click() or focus() until working on a larger scale javascript project the other day.</p>
+<div class="entry-content"><p>I have just gotten started using the Octopress framework for blogging, and I love it. The setup process is unbelievably well-documented, and if you&rsquo;re familiar with Git and Ruby projects, you&rsquo;ll pick it up fairly quickly. The only issue I had early on was pushing my new blog up to Github for version control. It&rsquo;s a little tricky since the first step is cloning from Brandon Mathis&#8217; Octopress repo, but the fix is relatively simple.</p>
 
 <!-- more -->
 
 
-<p><em>Any element with two event watchers where one must be expired <strong>requires</strong> the bind function.</em></p>
+<p>Once you&rsquo;ve clone the Octopress project, thrown up a few posts, and tidied up any configuration you want, you&rsquo;re going to want to get the repo into version control using Git. If you&rsquo;re like me, you&rsquo;re also going to want to push it up to Github. I was surprised upon first trying to do this, that my repo was already set up with a remote named origin. Of course, it was; I had cloned from the Octopress repo. I went ahead and pulled a quick switcheroo before add the remote Github origin.</p>
 
-<p>Imagine a tabbed user interface wherein the content is loaded via ajax.  If both event watchers are on click, the ajaxing needs to be expired while the tabbed javascript must stay active.  With binding, an event can be passed that can then be expired at the end of the function.  The bind function gives you a greater amount of control over event expiration than any of the jQuery shortcut functions can provide.</p>
+<blockquote><p>git rename remote clone
+git add remote origin [github url]</p></blockquote>
+
+<p>It feels a little hacky, but it got the trick done.</p>
+
+<p>Pretty fitting that I&rsquo;m writing about using Octopress as my first post written on the service, huh?</p>
 </div>
 
 
@@ -136,7 +141,7 @@
   
 
 
-<time datetime="2010-05-17T12:00:00-04:00" pubdate data-updated="true">May 17<span>th</span>, 2010</time>
+<time datetime="2013-08-25T14:12:00-04:00" pubdate data-updated="true">Aug 25<span>th</span>, 2013</time>
       
 
 <span class="categories">
@@ -150,7 +155,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://danubilla.com/blog/web-development/the-importance-of-bind-in-jquery.html" data-via="dubilla" data-counturl="http://danubilla.com/blog/web-development/the-importance-of-bind-in-jquery.html" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://danubilla.com/blog/web-development/pushing-your-octopress-blog-to-github.html" data-via="dubilla" data-counturl="http://danubilla.com/blog/web-development/pushing-your-octopress-blog-to-github.html" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -163,10 +168,10 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/web-development/maintenance-month.html" title="Previous Post: Maintenance Month">&laquo; Maintenance Month</a>
+        <a class="basic-alignment left" href="/blog/web-development/yeoman-backbone-and-a-smarter-client.html" title="Previous Post: Yeoman, Backbone, and a Smarter Client">&laquo; Yeoman, Backbone, and a Smarter Client</a>
       
       
-        <a class="basic-alignment right" href="/blog/design/davis-square-flag.html" title="Next Post: Davis Square Flag">Davis Square Flag &raquo;</a>
+        <a class="basic-alignment right" href="/blog/web-development/introducing-maxwell.html" title="Next Post: Introducing MaxWell">Introducing MaxWell &raquo;</a>
       
     </p>
   </footer>
@@ -275,8 +280,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://danubilla.com/blog/web-development/the-importance-of-bind-in-jquery.html';
-        var disqus_url = 'http://danubilla.com/blog/web-development/the-importance-of-bind-in-jquery.html';
+        var disqus_identifier = 'http://danubilla.com/blog/web-development/pushing-your-octopress-blog-to-github.html';
+        var disqus_url = 'http://danubilla.com/blog/web-development/pushing-your-octopress-blog-to-github.html';
         var disqus_script = 'embed.js';
       
     (function () {

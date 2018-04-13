@@ -4,7 +4,7 @@
   <title><![CDATA[Dan Ubilla]]></title>
   <link href="http://danubilla.com/atom.xml" rel="self"/>
   <link href="http://danubilla.com/"/>
-  <updated>2018-02-03T17:16:37-05:00</updated>
+  <updated>2018-04-12T23:24:54-04:00</updated>
   <id>http://danubilla.com/</id>
   <author>
     <name><![CDATA[Dan Ubilla]]></name>
@@ -12,6 +12,51 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Favorite Reads of 2017]]></title>
+    <link href="http://danubilla.com/blog/books/favorite-reads-of-2017.html"/>
+    <updated>2018-04-12T23:25:00-04:00</updated>
+    <id>http://danubilla.com/blog/books/favorite-reads-of-2017</id>
+    <content type="html"><![CDATA[<p>Somewhere in the middle of 2017, I set a goal of reading 30 books by the end of the year. I finished Book 30 sometime around 5pm on New Year’s Eve. Here are my favorite ten in chronological order.</p>
+
+<!-- more -->
+
+
+<p><strong>Powerhouse: The Untold Story of Hollywood’s Creative Artists Agency</strong>, <em>James Andrew Miller</em>. Powerhouse is Miller’s latest oral history. After chronicling Saturday Night Live and ESPN, Miller turned his attention to CAA, the influential talent agency. The subject initially dissuaded me from the read, but Miler’s ability to pull stories from his interviewees had me hooked to the history of the agency quickly. It was interesting to compare the agency’s rise to stories of so many startups today.</p>
+
+<p><strong>Creativity, Inc.</strong>, <em>Ed Catmull</em>. Catmull details the founding of Pixar and the lessons he learned along the way. I had this one recommended for several years, and I wish I had pulled it off the shelf sooner. Pixar’s tale of persistence is entertaining enough, but it’s the inspiration that Catmull offers that makes this book a classic. &ldquo;Creativity, Inc.&rdquo; covers Catmull’s philosophy on continuous improvement, small iterations and feedback loops, and fostering new ideas. For the latter, Catmull discusses his mantra of “protecting the new”: allowing ideas to incubate and grow without being rejected too early.</p>
+
+<blockquote><p>Management’s job isn’t to prevent risk but to build the ability to recover</p></blockquote>
+
+<p><strong>The Manager’s Path</strong>, <em>Camille Fournier</em>. It’s hard to say enough about this book. Fournier dissects the various paths in a technologist’s career with emphasis, of course, on the management track. Fournier provides organization to the chaos that are our various career paths. The book makes the, perhaps unexpected, call to spend the first few chapters discussing the purely technical track that so many of us start in, and it takes time to explore management’s relationship with these career steps. The book is all the better for it, and it’s one of the reasons I feel comfortable recommending it to anybody in the software engineering field. Another strong positive for the book is its exploration of the various ways each role can be played, and Fournier does an excellent job of explaining the pros and cons while taking care to note the factors that could affect each (e.g. the size of the team, the industry) . As ~The Manager’s Path~ was released last year, it is one of my must reads of 2017.</p>
+
+<p><strong>High Output Management</strong>, <em>Andrew S. Grove</em>. There is not another book on this list that I’ve returned to more than &ldquo;High Output Management&rdquo;. The book was first written in 1985, but the lessons feel timeless. Grove leans on feedback, context-gathering, and context-sharing as essential skills of management. I could write a post laying out the top ten takeaways from this book alone. Admittedly, there are times when you’ll have to do some time translation between tools that Grove mentions in the text and the tools we have available today, but overall, the author does a great job of keeping the lessons tool-agnostic and explains the why with such clarity that the translation requires little energy. When new managers ask for recommended reading, this is the first book I mention. It’s an all-timer.</p>
+
+<blockquote><p>My day always ends when I’m tired and ready to go home, not when I’m done. I am never done.</p></blockquote>
+
+<p><strong>Turn the Ship Around!</strong>, <em>L. David Marquet</em>. &ldquo;Turn the Ship Around&rdquo; is the last in the trilogy of management books I read this summer that I’m recommending here. The book is probably the most readable of the bunch. It follows Marquet, the newly minted commander of the USS Santa Fe, as he comes aboard the submarine, works to learn about the crew and the ship’s operations, and the lessons he learned from turning around the ship’s engagement and performance. Marquet’s approach is geared toward changing the traditional leader-follower approach to one in which every member of this ship’s crew can act as a leader to get things done. It’s told through a series of short stories which makes the book more of a page-turner than most of its ilk. This has become my top recommendation for engineers stepping into, or interested in stepping into, the tech lead role.</p>
+
+<p><strong>Open</strong>, <em>Andre Agassi</em>. I think I read this one more slowly because I sincerely did not want it to end. Ghost-written by J.R. Moehringer (author of The Tender Bar and, most recently, the ghost writer of Shoe Dog), the book puts a poetic touch on sport, competition, and the psychology of an athlete. I went into the book knowing a little bit about the sport and less about its history, and I left ravenous for more of each. It’s a tremendous telling of youth, growth, maturity, and wisdom.
+As I read the book, I was surprised when I reached the point in Agassi’s career when he was on the downside of his peak. It seemed to have gotten there so fast. Each tournament, each year, each goal was distracting from viewing the career as a whole. And I can only imagine that’s what it’s like.</p>
+
+<blockquote><p>I can’t promise you that you won’t be tired, he says. But please know this. There’s a lot of good waiting for you on the other side of tired. Get yourself tired, Andre. That’s where you’re going to know yourself. On the other side of tired.</p></blockquote>
+
+<p><strong>Difficult Conversations</strong>, <em>Douglas Stone</em>. In June of last year, I saw <a href="https://twitter.com/AdamCuppy">Adam Cuppy</a> give a talk at GORUCO on Difficult Conversations. When I got the chance to catch up with Adam later, he recommended I read the source code. I couldn’t have been happier to take the suggestion. Stone posits that the most important thing to do in a difficult conversation is to listen and understand that the other party in a difficult conversation has a world of background and perspective that you simply do not have. Stone recommends compassion as a goal of a difficult conversation rather than sympathy. And he reminds the reader that every difficult conversation is about what happened or what should happen, how each person feels about what happened or what should happen, and how each person feels their identity is subject to change as a result. Recommended reading for anyone who talks at work.</p>
+
+<p><strong>The Remains of the Day</strong>, <em>Kazuo Ishiguro</em>. I can describe &ldquo;The Remains of the Day&rdquo; as a tale of a butler taking a six day road trip in the English countryside in the 1950s, and I would be accurate. And with a synopsis such as that, it’s a near miracle that I picked it up. Throughout the novel, the protagonist, Stevens, reflects on his career, the relationships he forged throughout, and the ones he let languish. What is dignity and what is its worth? What is the cost of craftsmanship? Can we ever know the weight of the totality of our sacrifices as each one is being made?</p>
+
+<blockquote><p>There was surely nothing to indicate at the time that such evidently small incidents would render whole dreams forever irredeemable.</p></blockquote>
+
+<p><strong>Managing Oneself</strong>, <em>Peter F. Drucker</em>. ~Managing Oneself~ might be the most efficient book I’ve ever read. At 72 pages, it is rich and dense with lessons on how to consider and manage your career. The book contends that successful careers are not planned. Instead, they are crafted through understanding your values and knowing and leveraging your strengths. Published and presented in an uber-digestable fashion, you can breeze through the book in an hour.</p>
+
+<p><strong>Liar’s Poker</strong>, <em>Michael Lewis</em>. I fear I may have enjoyed this one too much. After reading &ldquo;The Big Short&rdquo;, I discovered that it is considered spiritual sequel to &ldquo;Liar’s Poker&rdquo;, and so &ldquo;LP&rdquo; made its way onto my list. If that is indeed the case, &ldquo;LP&rdquo; is to &ldquo;Before Sunrise&rdquo; what &ldquo;The Big Short&rdquo; is to &ldquo;Before Midnight&rdquo;. &ldquo;LP&rdquo; is a riotous roll through Solomon Brothers and Wall Street in the 80s. Parallels could be pointed out between the investment banks of the time and Silicon Valley today, but those comparisons only stand to rob the culture of what it was. It’d be easy to look at some of these excesses as tragedy in itself, but given the decades of time that has passed, the stories have aged into a nice comedy.</p>
+
+<blockquote><p>“I have this theory,” says Andy Stone, seated in his office at Prudential-Bache Securities. “Wall Street makes its best producers into managers. The reward for being a good producer is to be made a manager. The best producers are cutthroat, competitive, and often neurotic and paranoid. You turn those people into managers, and they go after each other. They no longer have the outlet for their instincts that producing gave them. They usually aren’t well suited to be managers. Half of them get thrown out because they are bad. Another quarter get muscled out because of politics. The guys left behind are just the most ruthless of the bunch. That’s why there are cycles on Wall Street—why Salomon Brothers is getting crunched now—because the ruthless people are bad for the business but can only be washed out by proven failure.”</p></blockquote>
+
+<p>I keep all my reading tracked in Goodreads. Check out <a href="https://www.goodreads.com/user/year_in_books/2017/2417523">everything else I read in 2017</a>, and follow along with my 2018 on <a href="https://www.goodreads.com/user/show/2417523-dan-ubilla">my Goodreads profile</a>. Happy reading!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Three Takeaways from Scaling 101]]></title>
@@ -404,6 +449,105 @@
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[An Introduction to Angular Testing]]></title>
+    <link href="http://danubilla.com/blog/web-development/angular-testing-by-component.html"/>
+    <updated>2016-05-17T13:46:00-04:00</updated>
+    <id>http://danubilla.com/blog/web-development/angular-testing-by-component</id>
+    <content type="html"><![CDATA[<p><a href="https://angularjs.org/">AngularJS</a> is designed to be as testable as possible. With its use of dependency injection, creating and manipulating mocks to test out individual components of your Angular application can be done in a stable, reliable way. Testing out each Angular component, however, comes with its own set of patterns to apply. Some of these patterns are similar cross-component, and using and understanding these core concepts of Angular testing can act as a nice bootstrap to your testing process.</p>
+
+<!-- more -->
+
+
+<p>There are a number of tools that can be combined to create an Angular framework. For these purposes, I&rsquo;ll be using <a href="http://coffeescript.org/">CoffeeScript</a> as a JavaScript precompiler, <a href="https://karma-runner.github.io/">Karma</a> as a test runner, <a href="https://mochajs.org/">Mocha</a> as a testing library, and <a href="http://chaijs.com/">Chai</a>, with expect syntax, as an assertion library. Before we take a look at testing Angular components, let&rsquo;s start by getting a closer look at our testing and assertion libraries.</p>
+
+<h3>Mocha and Chai</h3>
+
+<p>Let&rsquo;s start by taking a look at a very pared down of an AngularJS test, and we&rsquo;ll build on it over the course of this post.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nx">describe</span> <span class="s">&#39;TeamService&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
+</span><span class='line'>  <span class="nx">describe</span> <span class="s">&#39;exists&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
+</span><span class='line'>    <span class="p">...</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you&rsquo;ve used a test framework like RSpec or Minitest for Ruby before, the structure should look familiar. Mocha, and Jasmine, organize test assertions inside <code>describe</code> blocks. <code>describe</code> methods take two arguments: a string that should act as a human readable description for the state that follows, and a method that will contain a mix of assertions and more <code>describe</code> methods. These <code>describe</code> blocks do two things: they group specs together to help create a readable assertion and they provide a place to set up mocks for each assertion.</p>
+
+<p>Let&rsquo;s see how we can use describe blocks to set up different test scenarios using Mocha&rsquo;s beforeEach method.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nx">describe</span> <span class="s">&#39;TeamService&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
+</span><span class='line'>  <span class="nv">TeamService = </span><span class="kc">null</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">describe</span> <span class="s">&#39;when a team is passed in&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
+</span><span class='line'>    <span class="nx">beforeEach</span> <span class="nf">-&gt;</span>
+</span><span class='line'>      <span class="nv">TeamService.team =</span>
+</span><span class='line'>        <span class="nv">id: </span><span class="mi">1</span>
+</span><span class='line'>    <span class="nx">it</span> <span class="s">&#39;should should have a team&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
+</span><span class='line'>      <span class="nx">expect</span><span class="p">(</span><span class="nx">TeamService</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">have</span><span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="s">&#39;team&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="nx">describe</span> <span class="s">&#39;when a team is not passed in&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
+</span><span class='line'>    <span class="nx">it</span> <span class="s">&#39;should not have a team&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
+</span><span class='line'>      <span class="nx">expect</span><span class="p">(</span><span class="nx">TeamService</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="o">not</span><span class="p">.</span><span class="nx">have</span><span class="p">.</span><span class="nx">property</span><span class="p">(</span><span class="s">&#39;team&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>There&rsquo;s a lot going on above, so let&rsquo;s take it one thing at a time. Let&rsquo;s focus on the <code>beforeEach</code> method added above. By organizing our Angular specs into <code>describe</code> blocks that connote state, we&rsquo;re able to set up test data inside of the <code>beforeEach</code> method. <code>beforeEach</code> takes one argument: a method that will be executed before assertions are run. In fact, we&rsquo;re able to continue to nest <code>describe</code> blocks with their own <code>beforeEach</code> method, and we can be confident that they will run in order before each assertion is run. This allows us to construct specs that build state on themselves which should lead to readable, DRY tests. In the above example we describe two different states, and we&rsquo;re able to set up each using <code>beforeEach</code>.</p>
+
+<p>In order to access these variables across various <code>describe</code> blocks, we declare these variables inside the outermost <code>describe</code> block. We set our CoffeeScript variables equal to <code>null</code> as a way of declaring them. We could just as easily declare these by setting them equal to <code>undefined</code>. There should be no difference, so pick a convention and stick with it.</p>
+
+<p>One last thing to note on the example above: we&rsquo;ve added some new types of assertions. Assertions are denoted by the <code>it</code> method, which takes a string and a method. The second argument of the <code>it</code> block should contain an assertion. These assertions are the heart of the spec. As stated above, this assertion is written using Chai as our assertion library for our foray into Angular testing. Chai offers a bevy of different, interesting, and, most importantly, descriptive ways to write assertions. In the above example, our first assertions ensure the <code>team</code> property is on <code>TeamService</code>, and in the second, we assert that it&rsquo;s not.</p>
+
+<h3>Angular</h3>
+
+<p>In order to more easily test our Angular code, the Angular team provides a mocking library, ngMock, a mocking library. ngMock has two very important methods: <code>module</code> and <code>inject</code>. <code>module</code> take a string and loads in the corresponding Angular module. <code>inject</code> takes functions that wrap injectable services and providers. Let&rsquo;s see them in action:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nx">describe</span> <span class="s">&#39;TeamService&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
+</span><span class='line'>  <span class="nv">TeamService = </span><span class="kc">null</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">beforeEach</span> <span class="nf">-&gt;</span>
+</span><span class='line'>    <span class="nx">module</span> <span class="s">&#39;core&#39;</span>
+</span><span class='line'>    <span class="nx">inject</span> <span class="nf">(_TeamService_) -&gt;</span>
+</span><span class='line'>      <span class="nv">TeamService = </span><span class="nx">_TeamService_</span>
+</span><span class='line'>      <span class="nx">TeamService</span><span class="p">.</span><span class="nx">emptyRoster</span><span class="p">()</span>
+</span><span class='line'>  <span class="nx">it</span> <span class="s">&#39;should have an empty list of players&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
+</span><span class='line'>    <span class="nx">expect</span><span class="p">(</span><span class="nx">TeamService</span><span class="p">.</span><span class="nx">players</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">eql</span> <span class="p">[]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The very first thing we do inside our root <code>beforeEach</code> block is load the module that the <code>TeamService</code> is on. As soon as its loaded, we can begin injecting any dependencies we need to call as a part of testing the <code>TeamService</code>. In this case, we inject the <code>TeamService</code>. One thing to note is the underscore wrapping notation we use to inject the service. If we were to inject <code>TeamService</code>, we would not be able to reference the service in any subsequent <code>describe</code> or <code>it</code> blocks without declaring it in a parent scope. If we declare it at the top as <code>TeamService</code> however, then, we won&rsquo;t be able to inject <code>TeamService</code>. In order to handle this, Angular mocks provide us with an underscore-wrapped version of every service which resolves to that service itself. Injecting <code>_TeamService_</code> and setting it to the <code>TeamService</code> declared above, will then allow us to use <code>TeamService</code> throughout the spec. As a rule of thumb, if you only need to use a service inside the top-level <code>describe</code> block, you can use the standard service injection syntax; if you will need to call that service in subsequent blocks of the spec, you should use the underscore syntax for injection.</p>
+
+<p>Once the services and providers needed for the spec are declared and injected, we can use them throughout our test. In this case, we confirm that after running <code>TeamService.emptyRoster()</code> the <code>TeamService</code> has an empty <code>players</code> array.</p>
+
+<h3>Summary</h3>
+
+<p>Mochai and Chai can be great building blocks to setting up JS and Angular specs. With the patterns above, we are just scratching the surface. In future posts, I&rsquo;ll explore more patterns for testing Angular Services, Controllers, Directives, and more. So check back soon!</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Active Support Presence and the Single Line Method]]></title>
     <link href="http://danubilla.com/blog/web-development/activesupport-presence.html"/>
     <updated>2016-02-14T15:00:00-05:00</updated>
@@ -671,6 +815,27 @@
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[Pushing Your Octopress Blog to Github]]></title>
+    <link href="http://danubilla.com/blog/web-development/pushing-your-octopress-blog-to-github.html"/>
+    <updated>2013-08-25T14:12:00-04:00</updated>
+    <id>http://danubilla.com/blog/web-development/pushing-your-octopress-blog-to-github</id>
+    <content type="html"><![CDATA[<p>I have just gotten started using the Octopress framework for blogging, and I love it. The setup process is unbelievably well-documented, and if you&rsquo;re familiar with Git and Ruby projects, you&rsquo;ll pick it up fairly quickly. The only issue I had early on was pushing my new blog up to Github for version control. It&rsquo;s a little tricky since the first step is cloning from Brandon Mathis&#8217; Octopress repo, but the fix is relatively simple.</p>
+
+<!-- more -->
+
+
+<p>Once you&rsquo;ve clone the Octopress project, thrown up a few posts, and tidied up any configuration you want, you&rsquo;re going to want to get the repo into version control using Git. If you&rsquo;re like me, you&rsquo;re also going to want to push it up to Github. I was surprised upon first trying to do this, that my repo was already set up with a remote named origin. Of course, it was; I had cloned from the Octopress repo. I went ahead and pulled a quick switcheroo before add the remote Github origin.</p>
+
+<blockquote><p>git rename remote clone
+git add remote origin [github url]</p></blockquote>
+
+<p>It feels a little hacky, but it got the trick done.</p>
+
+<p>Pretty fitting that I&rsquo;m writing about using Octopress as my first post written on the service, huh?</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Yeoman, Backbone, and a Smarter Client]]></title>
     <link href="http://danubilla.com/blog/web-development/yeoman-backbone-and-a-smarter-client.html"/>
     <updated>2013-08-24T09:29:00-04:00</updated>
@@ -906,55 +1071,6 @@ Yeah, I was pretty angst-y and heartbroken when I wrote all of those songs. And 
 
 
 <p>The rest of the interview can be found <a href="http://suicidegirls.com/interviews/Matt%20Skiba%3A%20Alkaline%20Trio">here</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Preparing DanUbilla.com 2.0]]></title>
-    <link href="http://danubilla.com/blog/web-development/preparing-danubilla-dot-com-2-dot-0.html"/>
-    <updated>2010-01-02T17:58:00-05:00</updated>
-    <id>http://danubilla.com/blog/web-development/preparing-danubilla-dot-com-2-dot-0</id>
-    <content type="html"><![CDATA[<p>When I threw together the design you see on this very blog, I did it haphazardly and quickly just to get a bit of presentation to frame my entries.  It was always meant to be a dynamic frame, one that I could use as a training ground to various tips and tricks I picked up through my work, both professional and personal.  Looking at the current layout and site hierarchy in more depth, I&rsquo;ve decided to scratch most of what little you see here and strip down to the bare essentials.  By re-focusing on the content before continuing on with exploring new design techniques, I&rsquo;ll be able to re-imagine this web space to become not only the design and development playground that I originally intended it to be, but to be a proper gallery of my accomplishments and pursuits.  In breaking things down, I plan on following three tenants and lines of thinking that I&rsquo;ve come across in the past six months since introducing this site:</p>
-
-<!-- more -->
-
-
-<ul>
-<li><a title="Make Your Mockup in Markup" href="http://24ways.org/2009/make-your-mockup-in-markup">Make Your Mockup in Markup</a> &ndash; a fantastic argument to ditch Photoshop and design straight in the browser by Meagan Fisher of <a title="Simple Bits" href="http://simplebits.com/">Simplebits</a>.</li>
-<li><a title="Walls Come Tumbling Down" href="http://www.stuffandnonsense.co.uk/blog/about/walls_come_tumbling_down_presentation_slides_and_transcript/">Walls Come Tumbling Down</a> &ndash; the original presentation by Andy Clarke of <a title="Stuff and Nonsense" href="http://www.stuffandnonsense.co.uk/">Stuff and Nonsense</a> that inspired the preceeding article.</li>
-<li><a href="http://dowebsitesneedtolookexactlythesameineverybrowser.com/">This fabulous idea</a> that allows me the exploration of cutting-edge technologies without forgetting the end user.</li>
-</ul>
-
-
-<p>In addition to these inspirations, the new site will include a focus on typography and minimalism, both of which should provide a new spotlight on content.</p>
-
-<p>What you&rsquo;ll see as a visitor will be a constantly changing design as I will be working in the browser, and, for the most part, pushing updates to the live site as quickly as possible.  While this is not the most professional approach, I will consider this site an academic case study and web development playground for the next few months.  For those interested in design and coding, I will be posting periodic updates on the what, why, and how of the developing site.  For those interested in areas of the site, I would ask you to not mind the mess, but the idea is that no proverbial under construction sign is needed, that the site will be functional and accessible at every stage.</p>
-
-<p>Thanks for staying tuned and for your general interest.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Enabling cURL in XAMPP]]></title>
-    <link href="http://danubilla.com/blog/web-development/enabling-curl-in-xampp.html"/>
-    <updated>2009-12-12T16:04:00-05:00</updated>
-    <id>http://danubilla.com/blog/web-development/enabling-curl-in-xampp</id>
-    <content type="html"><![CDATA[<p>Implementing cURL in an XAMPP environment for the first time can cause a quick, early headache.  The most common error seen is a simple curl_init() can not be found.  Luckily, the solution is most likely simple.   cURL comes included with Apache but not installed, so you have to go in and turn it on yourself.</p>
-
-<p>Open up your php.ini located under the /php directory.  The line that needs editing will read: ;extension=php_curl.dll.  Simply remove the semi-colon to uncomment the line.  Then restart Apache to finish the change!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Going Back]]></title>
-    <link href="http://danubilla.com/blog/ramblings/going-back.html"/>
-    <updated>2009-07-26T16:08:00-04:00</updated>
-    <id>http://danubilla.com/blog/ramblings/going-back</id>
-    <content type="html"><![CDATA[<p><img class="aligncenter size-full wp-image-96" src="http://danubilla.com/images/www/shedeservesit.jpg" width="400" height="268" title="She Deserves It" alt="She Deserves It"></p>
-
-<p>The ambiguity of the narrator on this Post Secret really struck a chord.  The possibilities of all three roles are endless and striking.  Why did the male lead leave?  What is the female lead doing in the meanwhile?  We do know the male character is coming back; it&rsquo;s simply a matter of when.  How is the narrator related to either of the main characters?  And what to make of the starry, dreamy night sky backdrop?</p>
-
-<p>It works because the reader has enough information to create their own version of the story.  What&rsquo;s your version?</p>
 ]]></content>
   </entry>
   

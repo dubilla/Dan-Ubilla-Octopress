@@ -9,7 +9,7 @@
   <meta name="author" content="Dan Ubilla">
 
   
-  <meta name="description" content="Rails is a fantastic framework to develop with, but it can occasionally be unforgiving when it comes to error throwing. I was recently coding up a &hellip;">
+  <meta name="description" content="Ruby and Rails are both built to help us write concise, meaningful code. One pattern I constantly find myself writing is a method that returns one &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,88 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/web-development/activesupport-presence.html">Active Support Presence and the Single Line Method</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-02-14T15:00:00-05:00" pubdate data-updated="true">Feb 14<span>th</span>, 2016</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Ruby and Rails are both built to help us write concise, meaningful code. One pattern I constantly find myself writing is a method that returns one thing, if it exists, or a default value. This can work well upfront, but it takes a little more care if the case gets any more complex. Fortunately, Rails has just the trick to keep the more complex case nice and lean in its ActiveSupport gem.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/web-development/activesupport-presence.html">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/web-development/angularui-router-and-injecting-state-vs-stateparams.html">AngularUI Router and Injecting $state vs $stateParams</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-01-31T19:31:00-05:00" pubdate data-updated="true">Jan 31<span>st</span>, 2016</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>AngularUI Router is the de facto routing library in the Angular world. It takes the traditional routing mechanisms, and builds a subtle, but brilliant abstraction upon them. Instead of merely listening for requests at a set of URLs, it creates the concept of a set of states, each one configurable with an optional URL. This abstraction allows for flexibility when refactoring routes, but most interestingly, it creates the concept of a current state and stores key-value parameters of that state. Both the application&rsquo;s state and state parameters are available for injection with $state and $stateParams respectively, although, as we&rsquo;ll see, only one is necessary for injection in any given controller.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/web-development/angularui-router-and-injecting-state-vs-stateparams.html">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -204,88 +286,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/web-development/yeoman-backbone-and-a-smarter-client.html">Yeoman, Backbone, and a Smarter Client</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-24T09:29:00-04:00" pubdate data-updated="true">Aug 24<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I have gone through a number of tutorials on newer front-end tools like AngularJS, Grunt, and Backbone. Nothing compares to building something of your own, though. After dipping my toe into the water numerous times before, I dove into the deep end and started combining these tools on my own.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/web-development/yeoman-backbone-and-a-smarter-client.html">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/web-development/git-submodules.html">Git Submodules</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-30T23:50:00-04:00" pubdate data-updated="true">Jul 30<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I normally feel fairly well-versed in Git, which is to say, I can commit code, I can see what&rsquo;s happening, and I generally know enough to not screw anything up. I thought my Git Fu was tight enough that I at least had a good grasp on all that could be done with the version control system until I came across a project that used submodules. In Git, a submodule is a connection from one repository to another. Say, for instance, you&rsquo;re working on a suite of similar products. You want each one to have its own repository. That makes plenty of sense. But suppose each of these products shared a common messaging platform. Instead of maintaining this same code across the suite of products, which would defeat a lot of the purpose of setting up a VCS, you can give it its own subrepo, and have each product in your suite set up a submodule to reference that repo. All seems well and good, but there are a few gotchas to keep in mind.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/web-development/git-submodules.html">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -306,6 +306,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/books/favorite-reads-of-2017.html">Favorite Reads of 2017</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/management/three-takeaways-from-scaling-101.html">Three Takeaways From Scaling 101</a>
       </li>
     
@@ -318,11 +322,7 @@
       </li>
     
       <li class="post">
-        <a href="/blog/web-development/activesupport-presence.html">Active Support Presence and the Single Line Method</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/web-development/angularui-router-and-injecting-state-vs-stateparams.html">AngularUI Router and Injecting $state vs $stateParams</a>
+        <a href="/blog/web-development/angular-testing-by-component.html">An Introduction to Angular Testing</a>
       </li>
     
   </ul>
